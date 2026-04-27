@@ -1,0 +1,54 @@
+{
+  "pageId": "69eb297804133713fa5a2d3f",
+  "slug": "changelog",
+  "lastUpdated": "2026-01-15T16:49:41.065Z",
+  "pagination": { "limit": 100, "offset": 0, "total": 6 },
+  "nodes": [
+    {
+      "type": "component-instance",
+      "id": "78e63c18-81a0-a346-8664-0f538c93d7e4",
+      "componentId": "d36a88a9-0b45-2553-76ef-3200b3336cad",
+      "propertyOverrides": []
+    },
+    {
+      "type": "component-instance",
+      "id": "e1d864c5-c87a-72b0-a9dd-a897b98ad2a7",
+      "componentId": "87b71e86-5bd0-e15b-6b6a-03e7e54b3101",
+      "propertyOverrides": []
+    },
+    {
+      "type": "text",
+      "id": "efe698b1-3e3f-c1bf-0bda-68bf056a6bf8",
+      "text": {
+        "html": "<h1>Changelog</h1>",
+        "text": "Changelog"
+      },
+      "attributes": {}
+    },
+    {
+      "type": "text",
+      "id": "597ecdd6-ab16-27f1-0721-38c5c2876456",
+      "text": {
+        "html": "<p>All changes and updates made to this template since release.</p>",
+        "text": "All changes and updates made to this template since release."
+      },
+      "attributes": {}
+    },
+    {
+      "type": "text",
+      "id": "3dff86be-60f1-053a-3482-e8182f60418f",
+      "text": {
+        "html": "<li>Initial Release</li>",
+        "text": "Initial Release"
+      },
+      "attributes": {}
+    },
+    {
+      "type": "component-instance",
+      "id": "78e63c18-81a0-a346-8664-0f538c93d7e9",
+      "componentId": "5e7206db-5680-a57f-0275-abd534b617a9",
+      "propertyOverrides": []
+    }
+  ],
+  "source": "Webflow MCP data_pages_tool get_page_content"
+}

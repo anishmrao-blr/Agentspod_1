@@ -1,0 +1,31 @@
+AgentsPod Webflow Upload Pack
+
+Section mapping:
+- Hero: hero_01..03
+- Services: service_01..03
+- Process/Projects: process_01..02
+- Testimonials: testimonial_logo_01..02
+
+Source URLs:
+- hero_01_team_collaboration.jpg: https://images.pexels.com/photos/7698802/pexels-photo-7698802.jpeg?auto=compress&cs=tinysrgb&w=1800&h=1200&dpr=1
+- hero_02_group_laptops.jpg: https://images.pexels.com/photos/6476261/pexels-photo-6476261.jpeg?auto=compress&cs=tinysrgb&w=1800&h=1200&dpr=1
+- hero_03_laptop_workspace.jpg: https://images.pexels.com/photos/7698887/pexels-photo-7698887.jpeg?auto=compress&cs=tinysrgb&w=1800&h=1200&dpr=1
+- service_01_team_meeting.jpg: https://images.pexels.com/photos/6476254/pexels-photo-6476254.jpeg?auto=compress&cs=tinysrgb&w=1800&h=1200&dpr=1
+- service_02_presentation.jpg: https://images.pexels.com/photos/7988206/pexels-photo-7988206.jpeg?auto=compress&cs=tinysrgb&w=1800&h=1200&dpr=1
+- service_03_woman_laptop.jpg: https://images.pexels.com/photos/4990530/pexels-photo-4990530.jpeg?auto=compress&cs=tinysrgb&w=1800&h=1200&dpr=1
+- process_01_abstract_orange_lights.png: https://images.pexels.com/photos/10325707/pexels-photo-10325707.png?auto=compress&cs=tinysrgb&w=1800&h=1200&dpr=1
+- process_02_abstract_lights.jpg: https://images.pexels.com/photos/373543/pexels-photo-373543.jpeg?cs=srgb&dl=pexels-pixabay-373543.jpg&fm=jpg
+- testimonial_logo_01_nova.png: https://cdn.prod.website-files.com/69eb297704133713fa5a2d00/69eb297804133713fa5a2d71_Nova-Logo.png
+- testimonial_logo_02_lumen.png: https://cdn.prod.website-files.com/69eb297704133713fa5a2d00/69eb297804133713fa5a2d62_Lumen-Logo.png
+
+Download status:
+- hero_01_team_collaboration.jpg: ok (187102)
+- hero_02_group_laptops.jpg: ok (193302)
+- hero_03_laptop_workspace.jpg: ok (177311)
+- service_01_team_meeting.jpg: ok (260188)
+- service_02_presentation.jpg: ok (93458)
+- service_03_woman_laptop.jpg: ok (241953)
+- process_01_abstract_orange_lights.png: ok (225591)
+- process_02_abstract_lights.jpg: ok (1002332)
+- testimonial_logo_01_nova.png: ok (4450)
+- testimonial_logo_02_lumen.png: ok (4112)

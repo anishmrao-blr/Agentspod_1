@@ -1,0 +1,127 @@
+AI Brand Logos (HQ) sourced via Firecrawl search
+================================================
+
+File: nvidia_logo.svg
+Status: OK
+Size: 3.2 KB
+Direct URL: https://upload.wikimedia.org/wikipedia/sco/2/21/Nvidia_logo.svg
+Source Page: https://commons.wikimedia.org/wiki/File:NVIDIA_logo.svg
+
+File: aws_logo.svg
+Status: OK
+Size: 3.4 KB
+Direct URL: https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg
+Source Page: https://commons.wikimedia.org/wiki/File:Amazon_Web_Services_Logo.svg
+
+File: openai_logo.svg
+Status: OK
+Size: 2.9 KB
+Direct URL: https://upload.wikimedia.org/wikipedia/commons/4/4d/OpenAI_Logo.svg
+Source Page: https://commons.wikimedia.org/wiki/File:OpenAI_Logo.svg
+
+File: anthropic_logo.svg
+Status: OK
+Size: 1.9 KB
+Direct URL: https://upload.wikimedia.org/wikipedia/commons/7/78/Anthropic_logo.svg
+Source Page: https://commons.wikimedia.org/wiki/File:Anthropic_logo.svg
+
+File: openclaw_logo.svg
+Status: OK
+Size: 12.6 KB
+Direct URL: https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/svg/openclaw.svg
+Source Page: https://dashboardicons.com/icons/openclaw
+
+File: google_deepmind_logo.svg
+Status: OK
+Size: 17.2 KB
+Direct URL: https://upload.wikimedia.org/wikipedia/commons/d/dc/Google_DeepMind_logo.svg
+Source Page: https://commons.wikimedia.org/wiki/File:Google_DeepMind_logo.svg
+
+File: mistral_ai_logo.svg
+Status: OK
+Size: 11.0 KB
+Direct URL: https://upload.wikimedia.org/wikipedia/de/1/1c/Mistral_AI_logo.svg
+Source Page: https://de.wikipedia.org/wiki/Datei:Mistral_AI_logo.svg
+
+File: huggingface_logo.svg
+Status: FAILED: HTTP Error 429: Too many requests (76af2b0)
+Size: -
+Direct URL: https://upload.wikimedia.org/wikipedia/commons/d/d6/Hf-logo-with-title.svg
+Source Page: https://commons.wikimedia.org/wiki/File:Hf-logo-with-title.svg
+
+File: xai_logo.svg
+Status: FAILED: HTTP Error 429: Too many requests (f061ab2)
+Size: -
+Direct URL: https://upload.wikimedia.org/wikipedia/commons/9/93/XAI_Logo.svg
+Source Page: https://commons.wikimedia.org/wiki/File:XAI_Logo.svg
+
+File: cohere_logo.png
+Status: FAILED: HTTP Error 429: Too many requests (f061ab2)
+Size: -
+Direct URL: https://upload.wikimedia.org/wikipedia/commons/4/44/Cohere-Logo.png
+Source Page: https://commons.wikimedia.org/wiki/File:Cohere-Logo.png
+
+File: stability_ai_wordmark.png
+Status: FAILED: HTTP Error 429: Too many requests (76af2b0)
+Size: -
+Direct URL: https://upload.wikimedia.org/wikipedia/commons/9/90/Stability_Ai_%E2%80%94_wordmark.png
+Source Page: https://commons.wikimedia.org/wiki/File:Stability_Ai_%E2%80%94_wordmark.png
+
+File: meta_ai_logo.png
+Status: FAILED: HTTP Error 429: Too many requests (76af2b0)
+Size: -
+Direct URL: https://upload.wikimedia.org/wikipedia/commons/b/b1/Meta_AI_logo.png
+Source Page: https://commons.wikimedia.org/wiki/File:Meta_AI_logo.png
+
+Fallback downloads
+------------------
+File: huggingface_logo.svg
+Status: OK
+Size: 3.0 KB
+Direct URL: https://cdn.simpleicons.org/huggingface
+Source Page: https://simpleicons.org/?q=huggingface
+
+File: xai_logo.svg
+Status: FAILED: HTTP Error 404: Not Found
+Size: -
+Direct URL: https://cdn.simpleicons.org/xai
+Source Page: https://simpleicons.org/?q=xai
+
+File: cohere_logo.svg
+Status: FAILED: HTTP Error 404: Not Found
+Size: -
+Direct URL: https://cdn.simpleicons.org/cohere
+Source Page: https://simpleicons.org/?q=cohere
+
+File: stability_ai_logo.svg
+Status: FAILED: HTTP Error 404: Not Found
+Size: -
+Direct URL: https://cdn.simpleicons.org/stabilityai
+Source Page: https://simpleicons.org/?q=stabilityai
+
+File: meta_logo.svg
+Status: OK
+Size: 1.3 KB
+Direct URL: https://cdn.simpleicons.org/meta
+Source Page: https://simpleicons.org/?q=meta
+
+Additional downloads
+-------------------
+File: xai_logo.png
+Status: OK
+Size: 80.7 KB
+Direct URL: https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/XAI_Logo.svg/3840px-XAI_Logo.svg.png
+Source Page: https://commons.wikimedia.org/wiki/File:XAI_Logo.svg
+
+File: cohere_logo.png
+Status: OK
+Size: 3.9 KB
+Direct URL: https://vectorseek.com/wp-content/uploads/2025/07/Cohere-ai-Logo-PNG-SVG-Vector.png
+Source Page: https://vectorseek.com/vector_logo/cohere-ai-logo-png-svg-vector/
+
+File: stability_ai_logo.png
+Status: OK
+Size: 11.1 KB
+Direct URL: https://vectorseek.com/wp-content/uploads/2023/12/Stability-AI-Logo-Vector.svg-.png
+Source Page: https://vectorseek.com/vector_logo/stability-ai-logo-vector/
+

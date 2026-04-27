@@ -1,0 +1,13 @@
+# OpenMemory - IDE/Assistant specific rules
+.cursor/rules/openmemory.mdc
+
+# Dependencies and build output
+node_modules/
+.next/
+
+# Local temp artifacts
+.tmp_fix_chunks/
+.tmp_fix_ops.txt
+
+# Worktree directory
+.worktrees/

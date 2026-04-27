@@ -1,0 +1,35 @@
+{
+  "name": "agentspod-landing",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint . --max-warnings=0"
+  },
+  "dependencies": {
+    "embla-carousel-react": "^8.6.0",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^0.544.0",
+    "next": "16.2.4",
+    "react": "19.2.5",
+    "react-dom": "19.2.5",
+    "react-fast-marquee": "^1.6.5",
+    "simple-icons": "^16.18.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "4.2.4",
+    "@types/node": "25.6.0",
+    "@types/react": "19.2.14",
+    "@types/react-dom": "19.2.3",
+    "@typescript-eslint/eslint-plugin": "8.59.0",
+    "@typescript-eslint/parser": "8.59.0",
+    "autoprefixer": "10.5.0",
+    "eslint": "9.39.4",
+    "eslint-config-next": "16.2.4",
+    "postcss": "8.5.10",
+    "tailwindcss": "4.2.4",
+    "typescript": "6.0.3"
+  }
+}

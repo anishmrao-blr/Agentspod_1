@@ -1,0 +1,63 @@
+{
+  "siteId": "69eb297704133713fa5a2d00",
+  "sourceDesignerUrl": "https://agentspod-ai.design.webflow.com/?app=dc8209c65e3ec02254d15275ca056539c89f6d15741893a0adf29ad6f381eb99",
+  "exportedAt": "2026-04-25T00:00:00.000Z",
+  "exportMethod": "Webflow MCP (project-0-Pluging_test-webflow) data_sites_tool + data_pages_tool + data_cms_tool",
+  "cmsCollections": [],
+  "pages": [
+    {
+      "id": "69eb297804133713fa5a2d39",
+      "title": "AgentsPod.ai | End-to-End AI Product Partner",
+      "slug": "/",
+      "publishedPath": "/"
+    },
+    {
+      "id": "69eb297804133713fa5a2d3c",
+      "title": "Style Guide",
+      "slug": "style-guide",
+      "publishedPath": "/template/style-guide"
+    },
+    {
+      "id": "69eb297804133713fa5a2d3a",
+      "title": "Password",
+      "slug": "401",
+      "publishedPath": "/401"
+    },
+    {
+      "id": "69eb297804133713fa5a2d3b",
+      "title": "404",
+      "slug": "404",
+      "publishedPath": "/404"
+    },
+    {
+      "id": "69eb297804133713fa5a2d3f",
+      "title": "Changelog",
+      "slug": "changelog",
+      "publishedPath": "/template/changelog"
+    },
+    {
+      "id": "69eb297804133713fa5a2d3e",
+      "title": "Licenses",
+      "slug": "licenses",
+      "publishedPath": "/template/licenses"
+    },
+    {
+      "id": "69eb297804133713fa5a2d40",
+      "title": "Instructions",
+      "slug": "instructions",
+      "publishedPath": "/template/instructions"
+    },
+    {
+      "id": "69eb297804133713fa5a2d41",
+      "title": "Projects",
+      "slug": "projects",
+      "publishedPath": "/projects"
+    },
+    {
+      "id": "69eb297804133713fa5a2d43",
+      "title": "Project Details",
+      "slug": "project-details",
+      "publishedPath": "/projects/project-details"
+    }
+  ]
+}
