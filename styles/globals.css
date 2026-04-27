@@ -1,20 +1,106 @@
-:root {
+:root,
+[data-theme="dark"] {
   color-scheme: dark;
-  --surface-page: #000;
-  --surface-raised: #0b0e14;
-  --foreground-default: #f0f0f0;
-  --foreground-muted: #a1a4a5;
-  --foreground-soft: #fcfdffef;
-  --foreground-fade: #f1f7feb5;
-  --foreground-faint: #e5edfd7b;
-  --foreground-ghost: #ffffff99;
-  --foreground-success-tint: #46fea5d4;
-  --border-subtle: rgba(214, 235, 253, 0.19);
-  --border-strong: rgba(255, 255, 255, 0.2);
+  --pc-surface-page: #000000;
+  --pc-surface-card: #0b0e14;
+  --pc-surface-elevated: #06080d;
+  --pc-surface-solid: #111111;
+  --pc-text-primary: #f0f0f0;
+  --pc-text-muted: #a1a4a5;
+  --pc-text-soft: #fcfdffef;
+  --pc-text-fade: #f1f7feb5;
+  --pc-text-faint: #e5edfd7b;
+  --pc-text-ghost: #ffffff99;
+  --pc-text-success-tint: #46fea5d4;
+  --pc-border-subtle: rgba(214, 235, 253, 0.19);
+  --pc-border-strong: rgba(255, 255, 255, 0.2);
+  --pc-btn-primary-bg: linear-gradient(104deg, rgba(253, 253, 253, 0.05) 5%, rgba(240, 240, 228, 0.1) 100%);
+  --pc-btn-ghost-text: var(--pc-text-muted);
+  --pc-footer-block-bg: rgba(255, 255, 255, 0.03);
+  --pc-theme-toggle-bg: rgba(255, 255, 255, 0.02);
+  --pc-theme-toggle-bg-active: rgba(255, 255, 255, 0.08);
+  --pc-theme-toggle-text: var(--pc-text-primary);
+  --pc-theme-toggle-border: var(--pc-border-subtle);
+  --pc-gradient-text-hero-accent: linear-gradient(225deg, #fff 30%, #ffffff80 100%);
+  --pc-gradient-text-stat-accent: linear-gradient(225deg, #fff 30%, #ffffff80 100%);
+  --pc-surface-tab: linear-gradient(180deg, #111, #060606);
+  --pc-surface-card-gradient: linear-gradient(180deg, #111, #030303);
+  --pc-surface-media-gradient: linear-gradient(180deg, #1f2937, #020617);
+  --pc-surface-dropdown: rgba(8, 10, 14, 0.96);
+  --pc-button-primary-background: var(--pc-btn-primary-bg);
+  --pc-button-ghost-foreground: var(--pc-btn-ghost-text);
+  --pc-card-surface-background: var(--pc-surface-card-gradient);
+  --pc-card-media-background: var(--pc-surface-media-gradient);
+  --pc-footer-surface-background: var(--pc-footer-block-bg);
+  --pc-toggle-surface-background: var(--pc-theme-toggle-bg);
+  --pc-toggle-surface-background-active: var(--pc-theme-toggle-bg-active);
+  --pc-toggle-foreground: var(--pc-theme-toggle-text);
+  --pc-toggle-border: var(--pc-theme-toggle-border);
+  --surface-page: var(--pc-surface-page);
+  --surface-raised: var(--pc-surface-card);
+  --foreground-default: var(--pc-text-primary);
+  --foreground-muted: var(--pc-text-muted);
+  --foreground-soft: var(--pc-text-soft);
+  --foreground-fade: var(--pc-text-fade);
+  --foreground-faint: var(--pc-text-faint);
+  --foreground-ghost: var(--pc-text-ghost);
+  --foreground-success-tint: var(--pc-text-success-tint);
+  --border-subtle: var(--pc-border-subtle);
+  --border-strong: var(--pc-border-strong);
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-pill: 999px;
+}
+
+[data-theme="light"] {
+  color-scheme: light;
+  --pc-surface-page: #f7faff;
+  --pc-surface-card: #ffffff;
+  --pc-surface-elevated: #f8fbff;
+  --pc-surface-solid: #eef3fb;
+  --pc-text-primary: #111827;
+  --pc-text-muted: #4b5563;
+  --pc-text-soft: #1f2937;
+  --pc-text-fade: #374151;
+  --pc-text-faint: #6b7280;
+  --pc-text-ghost: #6b7280;
+  --pc-text-success-tint: #0f766e;
+  --pc-border-subtle: rgba(217, 226, 239, 0.95);
+  --pc-border-strong: rgba(17, 24, 39, 0.22);
+  --pc-btn-primary-bg: linear-gradient(104deg, rgba(255, 255, 255, 0.95) 5%, rgba(234, 243, 255, 1) 100%);
+  --pc-btn-ghost-text: #334155;
+  --pc-footer-block-bg: rgba(15, 23, 42, 0.04);
+  --pc-theme-toggle-bg: rgba(15, 23, 42, 0.03);
+  --pc-theme-toggle-bg-active: rgba(15, 23, 42, 0.1);
+  --pc-theme-toggle-text: #1f2937;
+  --pc-theme-toggle-border: rgba(148, 163, 184, 0.45);
+  --pc-gradient-text-hero-accent: linear-gradient(225deg, #0f172a 24%, #334155 100%);
+  --pc-gradient-text-stat-accent: linear-gradient(225deg, #111827 20%, #334155 100%);
+  --pc-surface-tab: linear-gradient(180deg, #ffffff, #f1f5f9);
+  --pc-surface-card-gradient: linear-gradient(180deg, #ffffff, #f8fbff);
+  --pc-surface-media-gradient: linear-gradient(180deg, #e2e8f0, #f8fafc);
+  --pc-surface-dropdown: rgba(255, 255, 255, 0.98);
+  --pc-button-primary-background: var(--pc-btn-primary-bg);
+  --pc-button-ghost-foreground: var(--pc-btn-ghost-text);
+  --pc-card-surface-background: var(--pc-surface-card-gradient);
+  --pc-card-media-background: var(--pc-surface-media-gradient);
+  --pc-footer-surface-background: var(--pc-footer-block-bg);
+  --pc-toggle-surface-background: var(--pc-theme-toggle-bg);
+  --pc-toggle-surface-background-active: var(--pc-theme-toggle-bg-active);
+  --pc-toggle-foreground: var(--pc-theme-toggle-text);
+  --pc-toggle-border: var(--pc-theme-toggle-border);
+  --surface-page: var(--pc-surface-page);
+  --surface-raised: var(--pc-surface-card);
+  --foreground-default: var(--pc-text-primary);
+  --foreground-muted: var(--pc-text-muted);
+  --foreground-soft: var(--pc-text-soft);
+  --foreground-fade: var(--pc-text-fade);
+  --foreground-faint: var(--pc-text-faint);
+  --foreground-ghost: var(--pc-text-ghost);
+  --foreground-success-tint: var(--pc-text-success-tint);
+  --border-subtle: var(--pc-border-subtle);
+  --border-strong: var(--pc-border-strong);
 }
 
 *,
@@ -68,7 +154,7 @@ a {
   top: 0;
   z-index: 20;
   height: 59px;
-  background: rgba(0, 0, 0, 0.78);
+  background: color-mix(in srgb, var(--pc-surface-page) 78%, transparent);
   border-bottom: 1px solid var(--border-subtle);
   backdrop-filter: blur(10px);
 }
@@ -120,13 +206,24 @@ a {
 
 .pc-btn-primary-header,
 .pc-btn-primary-hero {
-  border-color: var(--border-strong);
-  background: linear-gradient(104deg, rgba(253, 253, 253, 0.05) 5%, rgba(240, 240, 228, 0.1) 100%);
+  border-color: var(--pc-border-strong);
+  background: var(--pc-button-primary-background);
 }
 
 .pc-btn-ghost-header,
 .pc-btn-ghost-hero {
-  color: var(--foreground-muted);
+  color: var(--pc-button-ghost-foreground);
+}
+
+.pc-theme-toggle {
+  min-width: 88px;
+  border: 1px solid var(--pc-toggle-border);
+  background: var(--pc-toggle-surface-background);
+  color: var(--pc-toggle-foreground);
+}
+
+.pc-theme-toggle[aria-pressed="true"] {
+  background: var(--pc-toggle-surface-background-active);
 }
 
 .pc-btn.is-hover {
@@ -179,7 +276,7 @@ a {
   line-height: 1.22;
   font-weight: 400;
   letter-spacing: -1px;
-  background: linear-gradient(225deg, #fff 30%, #ffffff80 100%);
+  background: var(--pc-gradient-text-hero-accent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -379,7 +476,7 @@ a {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-md);
   color: var(--foreground-muted);
-  background: linear-gradient(180deg, #111, #060606);
+  background: var(--pc-surface-tab);
   min-height: 56px;
   padding: 0 16px;
   font-size: 14px;
@@ -387,8 +484,8 @@ a {
 }
 
 .pc-tab.is-active {
-  color: #fcfdff;
-  border-color: rgba(217, 237, 255, 0.37);
+  color: var(--pc-text-soft);
+  border-color: var(--pc-border-strong);
 }
 
 .pc-card-grid {
@@ -402,7 +499,7 @@ a {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: linear-gradient(180deg, #111, #030303);
+  background: var(--pc-card-surface-background);
 }
 
 .pc-card-feature.is-hover {
@@ -415,7 +512,7 @@ a {
 
 .pc-card-media {
   height: 324px;
-  background: linear-gradient(180deg, #1f2937, #020617);
+  background: var(--pc-card-media-background);
   background-size: cover;
   background-position: center;
 }
@@ -525,7 +622,7 @@ a {
   padding: 8px 16px;
   border-radius: var(--radius-pill);
   border: 1px solid var(--border-subtle);
-  background: rgba(255, 255, 255, 0.03);
+  background: var(--pc-footer-surface-background);
   color: var(--foreground-default);
   font-size: 12px;
 }
@@ -547,7 +644,7 @@ a {
   padding: 10px 0;
   border-radius: var(--radius-md);
   border: 1px solid var(--border-subtle);
-  background: rgba(8, 10, 14, 0.96);
+  background: var(--pc-surface-dropdown);
   backdrop-filter: blur(12px);
   flex-direction: column;
   gap: 2px;
@@ -606,7 +703,7 @@ a {
   border: 1px solid var(--border-subtle);
   border-radius: var(--radius-lg);
   padding: 36px 32px 40px;
-  background: linear-gradient(180deg, #111, #030303);
+  background: var(--pc-surface-card-gradient);
 }
 
 .pc-eyebrow {
@@ -661,7 +758,7 @@ a {
   font-weight: 400;
   line-height: 1.1;
   letter-spacing: -1px;
-  background: linear-gradient(225deg, #fff 30%, #ffffff80 100%);
+  background: var(--pc-gradient-text-stat-accent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;

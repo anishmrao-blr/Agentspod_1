@@ -9,6 +9,8 @@ import {
   ComponentTextH1Hero,
   ComponentTextH2Section
 } from "./PencilComponentLibrary";
+import Image from "next/image";
+import { useTheme } from "@/components/theme/useTheme";
 
 const ORIGIN = "https://www.sevensenseai.com";
 
@@ -63,6 +65,8 @@ const impactStats = [
 const intelligenceMetrics = ["+65% ROI INCREASE", "23% CAC REDUCTION", "5000+ HOURS SAVED"];
 
 export function LandingPage() {
+  const { theme, toggleTheme } = useTheme();
+
   return (
     <main className="pc-page">
       <header className="pc-header">
@@ -92,6 +96,15 @@ export function LandingPage() {
             <ComponentNavMenuItemLink href="#contact">Contact</ComponentNavMenuItemLink>
           </nav>
           <div className="pc-header-ctas">
+            <button
+              type="button"
+              className="pc-btn pc-btn-ghost-header pc-theme-toggle"
+              aria-label="Theme toggle"
+              aria-pressed={theme === "light"}
+              onClick={toggleTheme}
+            >
+              {theme === "light" ? "Light" : "Dark"}
+            </button>
             <a
               className="pc-btn pc-btn-primary-header pc-btn-anchor"
               href="https://cal.com/sevesenseai/30min"
@@ -131,7 +144,13 @@ export function LandingPage() {
         </div>
         <div className="pc-hero-art" aria-hidden="true">
           <div className="pc-hero-art-surface">
-            <img src="https://sevensenseai.com/images/ai-robot-background.png" alt="" />
+            <Image
+              src="https://sevensenseai.com/images/ai-robot-background.png"
+              alt=""
+              width={1200}
+              height={900}
+              style={{ width: "100%", height: "100%", objectFit: "cover" }}
+            />
           </div>
         </div>
       </section>
