@@ -18,3 +18,8 @@ node_modules/
 .worktrees/
 .vercel
 .firecrawl/
+
+# Local archive bundles (too large for git hosting)
+nextjs-app-upload.zip
+nextjs-app-source-upload.zip
+nextjs-app-code-upload.zip
