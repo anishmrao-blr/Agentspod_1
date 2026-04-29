@@ -32113,6 +32113,228 @@
           ]
         }
       ]
+    },
+    {
+      "type": "frame",
+      "id": "T85z02",
+      "x": 5028,
+      "y": 3974.250564334086,
+      "name": "03-aws-logo-smile",
+      "clip": true,
+      "width": 2617,
+      "height": 931,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "image-import-7.png",
+        "mode": "fill"
+      },
+      "stroke": {
+        "align": "inside",
+        "thickness": 1
+      },
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "d8bU9",
+      "x": 3730,
+      "y": 2337,
+      "name": "04-google-cloud-logo",
+      "clip": true,
+      "width": 5059,
+      "height": 853,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "image-import-10.png",
+        "mode": "fill"
+      },
+      "stroke": {
+        "align": "inside",
+        "thickness": 1
+      },
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "JCUph",
+      "x": 6020,
+      "y": 4627.503386004515,
+      "name": "05-openai-blossom-official",
+      "clip": true,
+      "width": 430,
+      "height": 555,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "image-import-9.png",
+        "mode": "fill"
+      },
+      "stroke": {
+        "align": "inside",
+        "thickness": 1
+      },
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "aKKCF",
+      "x": 2288,
+      "y": 311,
+      "name": "06-openai-wordmark-commons",
+      "clip": true,
+      "width": 5978,
+      "height": 1311,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "image-import-4.png",
+        "mode": "fill"
+      },
+      "stroke": {
+        "align": "inside",
+        "thickness": 1
+      },
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "f7uQ2",
+      "x": 3503,
+      "y": 5339,
+      "name": "08-langchain-logo-commons",
+      "clip": true,
+      "width": 5791,
+      "height": 815,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "image-import-12.png",
+        "mode": "fill"
+      },
+      "stroke": {
+        "align": "inside",
+        "thickness": 1
+      },
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "l3UOla",
+      "x": -1605,
+      "y": 9671,
+      "name": "10-elevenlabs-logo-black-official-svg",
+      "clip": true,
+      "width": 11057,
+      "height": 1438,
+      "fill": [
+        {
+          "type": "image",
+          "enabled": false,
+          "url": "image-import-17.png",
+          "mode": "fill"
+        },
+        {
+          "type": "image",
+          "enabled": true,
+          "url": "image-import-15.png",
+          "mode": "fill"
+        }
+      ],
+      "stroke": {
+        "align": "inside",
+        "thickness": 1
+      },
+      "layout": "none"
+    },
+    {
+      "type": "frame",
+      "id": "VurDy",
+      "x": 3380,
+      "y": 6893,
+      "name": "12-elevenlabs-logo-black",
+      "clip": true,
+      "width": 5409,
+      "height": 679,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "image-import-18.png",
+        "mode": "fill"
+      },
+      "stroke": {
+        "align": "inside",
+        "thickness": 1
+      },
+      "layout": "none"
+    },
+    {
+      "type": "rectangle",
+      "cornerRadius": 12,
+      "id": "N6x3V",
+      "x": 5406,
+      "y": 8107.437923250565,
+      "name": "Backdrop (dark) — white logo",
+      "fill": "#1f1f24ff",
+      "width": 3044,
+      "height": 610,
+      "stroke": {
+        "align": "inside",
+        "thickness": 1
+      }
+    },
+    {
+      "type": "frame",
+      "id": "t4ARhl",
+      "x": 5568,
+      "y": 8162,
+      "name": "13-elevenlabs-logo-white",
+      "clip": true,
+      "width": 3539,
+      "height": 555,
+      "fill": {
+        "type": "image",
+        "enabled": true,
+        "url": "image-import-14.png",
+        "mode": "fill"
+      },
+      "stroke": {
+        "align": "inside",
+        "thickness": 1
+      },
+      "layout": "none"
+    },
+    {
+      "type": "text",
+      "id": "Tz9Ec",
+      "x": 6020,
+      "y": 3139.6004514672686,
+      "name": "Partner logos — research export",
+      "fill": "#000000ff",
+      "textGrowth": "fixed-width-height",
+      "width": 379,
+      "height": 50,
+      "content": "Partner logos — research export",
+      "fontFamily": "Inter",
+      "fontSize": 24,
+      "fontWeight": "600"
+    },
+    {
+      "type": "text",
+      "id": "aQrVh",
+      "x": 6020,
+      "y": 3205.2595936794582,
+      "name": "Workspace bundle: official-brand-logos-research. Vendor assets where available; Wikimedia PNG renders for Anthropic, LangChain, NVIDIA. Import scale: FIT recommended for crisp vectors next pass.",
+      "opacity": 0.7200000286102295,
+      "fill": "#000000ff",
+      "textGrowth": "fixed-width-height",
+      "width": 1126,
+      "height": 57,
+      "content": "Workspace bundle: official-brand-logos-research. Vendor assets where available; Wikimedia PNG renders for Anthropic, LangChain, NVIDIA. Import scale: FIT recommended for crisp vectors next pass.",
+      "fontFamily": "Inter",
+      "fontSize": 13,
+      "fontWeight": "normal"
     }
   ]
 }

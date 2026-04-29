@@ -10,12 +10,12 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: "sevensenseai.com",
+        hostname: "agentspod.ai",
         pathname: "/**"
       },
       {
         protocol: "https",
-        hostname: "www.sevensenseai.com",
+        hostname: "www.agentspod.ai",
         pathname: "/**"
       }
     ]

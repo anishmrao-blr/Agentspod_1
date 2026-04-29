@@ -5,6 +5,9 @@
     },
     "webflow": {
       "enabled": true
+    },
+    "firecrawl": {
+      "enabled": true
     }
   }
 }

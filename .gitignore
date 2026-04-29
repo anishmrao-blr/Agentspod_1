@@ -1,6 +1,11 @@
 # OpenMemory - IDE/Assistant specific rules
 .cursor/rules/openmemory.mdc
 
+# Local secrets (never commit)
+.env
+.env.local
+.env.*.local
+
 # Dependencies and build output
 node_modules/
 .next/
@@ -11,3 +16,5 @@ node_modules/
 
 # Worktree directory
 .worktrees/
+.vercel
+.firecrawl/

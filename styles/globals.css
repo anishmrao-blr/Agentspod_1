@@ -51,6 +51,12 @@
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-pill: 999px;
+  /* Global layout scale controls (tune here to expand/contract app shell). */
+  --pc-layout-max-width: 1120px;
+  --pc-layout-gutter: 48px;
+  --pc-card-max-width: 500px;
+  --pc-card-media-height: 240px;
+  --pc-card-grid-max-width: 1080px;
 }
 
 [data-theme="light"] {
@@ -145,7 +151,7 @@ a {
 }
 
 .pc-wrap {
-  width: min(1280px, calc(100vw - 48px));
+  width: min(var(--pc-layout-max-width), calc(100vw - var(--pc-layout-gutter)));
   margin: 0 auto;
 }
 
@@ -161,24 +167,76 @@ a {
 
 .pc-header-row {
   height: 59px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: space-between;
+  column-gap: 24px;
 }
 
 .pc-brand {
-  font-size: 24px;
-  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  line-height: 0;
+}
+
+.pc-brand-logo {
+  transform: scale(0.56);
+  transform-origin: left center;
+}
+
+.pc-brand-logo-cube-mark {
+  display: block;
+  width: clamp(120px, 14vw, 170px);
+  height: auto;
+  aspect-ratio: 232 / 56;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.pc-logo-ai-agentspod {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 280px;
+  height: 88px;
+  padding: 20px 24px;
+  border-radius: 16px;
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-raised);
+}
+
+.pc-logo-ai-agentspod-image {
+  display: block;
+  width: 232px;
+  height: 56px;
+  object-fit: cover;
+}
+
+.pc-logo-ai-agentspod-cube-mark {
+  display: block;
+  width: 232px;
+  height: 56px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Keep header logo responsive when both logo classes are present. */
+.pc-brand-logo-cube-mark.pc-logo-ai-agentspod-cube-mark {
+  width: clamp(120px, 14vw, 170px);
+  height: auto;
 }
 
 .pc-header-nav {
   display: flex;
   gap: 14px;
+  justify-content: center;
 }
 
 .pc-header-ctas {
   display: flex;
   gap: 10px;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 .pc-nav-item {
@@ -202,6 +260,7 @@ a {
   background: transparent;
   font-size: 14px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
 .pc-btn-primary-header,
@@ -290,7 +349,7 @@ a {
   font-weight: 400;
   letter-spacing: -2.8px;
   line-height: 1.25;
-  background: linear-gradient(225deg, #fff 30%, #ffffff80 100%);
+  background: var(--pc-gradient-text-hero-accent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -362,7 +421,7 @@ a {
 }
 
 .pc-text-fx-gradient-hero-accent {
-  background: linear-gradient(225deg, #fff 30%, #ffffff80 100%);
+  background: var(--pc-gradient-text-hero-accent);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -373,6 +432,7 @@ a {
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
   column-gap: 48px;
+  row-gap: 0;
   min-height: 918px;
 }
 
@@ -418,11 +478,225 @@ a {
   overflow: hidden;
 }
 
+.pc-hero-art-surface-plain {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
 .pc-hero-art-surface img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.pc-hero-rubrik-wrap {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.pc-hero-rubrik {
+  transform: scale(2.6);
+  transform-origin: center;
+}
+
+.pc-hero-video-fill {
+  width: 100%;
+  height: 100%;
+}
+
+.pc-hero-video-container {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-subtle);
+  background: #000;
+  overflow: hidden;
+}
+
+.pc-hero-media-plain {
+  border: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.pc-hero-media-plain .pc-hero-video {
+  object-fit: contain;
+}
+
+.pc-hero-cube-media {
+  width: min(480px, 100%);
+  margin-inline: auto;
+  transform: translateX(-32px);
+}
+
+[data-theme="dark"] .pc-hero-cube-media .pc-hero-video {
+  mix-blend-mode: lighten;
+}
+
+[data-theme="light"] .pc-hero-cube-media .pc-hero-video {
+  mix-blend-mode: normal;
+}
+
+.pc-hero-video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.pc-hero-video-poster {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Pencil U9pp4: hero AI brand strip (full-width under headline + media) */
+.pc-hero-brands {
+  grid-column: 1 / -1;
+  margin-top: 40px;
+  min-width: 0;
+}
+
+.pc-hero-brands-inner {
+  width: 100%;
+  min-width: 0;
+}
+
+.pc-ai-brands-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 128px;
+  padding: 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--surface-page);
+}
+
+/* Hero partner row: logos only, no card wells (Pencil inline strip). */
+.pc-ai-brands-strip--bare {
+  background: transparent;
+  border: none;
+  padding: 12px 0;
+  min-height: 0;
+}
+
+.pc-ai-brands-strip--bare .pc-ai-brand-slot {
+  background: transparent;
+  border: none;
+  padding: 6px 10px;
+  min-height: 0;
+  gap: 0;
+}
+
+.pc-ai-brands-strip--bare .pc-ai-brand-slot-media {
+  background: transparent;
+  color: var(--foreground-default);
+}
+
+[data-theme="light"] .pc-ai-brands-strip--bare .pc-ai-brand-slot-media {
+  background: transparent;
+}
+
+[data-theme="dark"] .pc-ai-brands-strip--bare .pc-ai-brand-slot-media.is-invert-on-dark .pc-ai-brand-slot-svg {
+  filter: invert(1);
+}
+
+.pc-ai-brand-slot-link {
+  display: flex;
+  flex: 0 0 184px;
+  flex-shrink: 0;
+  max-width: 100%;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-md);
+}
+
+.pc-ai-brand-slot-link:focus-visible {
+  outline: 2px solid var(--foreground-muted);
+  outline-offset: 2px;
+}
+
+.pc-ai-brand-slot {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 92px;
+  padding: 10px 12px;
+  gap: 6px;
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  border: 1px dashed var(--border-subtle);
+}
+
+.pc-ai-brand-slot-media {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  flex: 1 1 auto;
+  min-height: 56px;
+  height: 56px;
+  border-radius: var(--radius-sm);
+  /* Neutral well so vector marks (dark, full-color, or light) stay legible on any strip theme */
+  background: #f1f5f9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 8px;
+  overflow: hidden;
+}
+
+[data-theme="light"] .pc-ai-brand-slot-media {
+  background: #e8eef8;
+}
+
+/*
+ * SVG-as-<img> often reports tiny intrinsic width with width:auto → flex shrink → vertical “pill”.
+ * Fill the media box and let object-fit scale (superpowers / systematic sizing fix).
+ */
+.pc-ai-brand-slot-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.pc-ai-brand-slot-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pc-ai-brand-slot-wrap {
+  display: flex;
+  flex: 0 0 184px;
+  flex-shrink: 0;
+  max-width: 100%;
+  border-radius: var(--radius-md);
+}
+
+.pc-ai-brand-slot-hint {
+  font-family: Inter, system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--foreground-muted);
+  text-align: center;
+  line-height: 1.2;
 }
 
 .pc-trust {
@@ -493,6 +767,9 @@ a {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 32px;
+  max-width: var(--pc-card-grid-max-width);
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pc-card-feature {
@@ -500,6 +777,11 @@ a {
   border-radius: var(--radius-lg);
   overflow: hidden;
   background: var(--pc-card-surface-background);
+  width: 100%;
+  max-width: var(--pc-card-max-width);
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .pc-card-feature.is-hover {
@@ -511,7 +793,7 @@ a {
 }
 
 .pc-card-media {
-  height: 324px;
+  height: var(--pc-card-media-height);
   background: var(--pc-card-media-background);
   background-size: cover;
   background-position: center;
@@ -529,11 +811,54 @@ a {
   color: var(--foreground-muted);
   font-size: 14px;
   line-height: 1.6;
+  flex: 1;
 }
 
 .pc-card-feature a {
   display: inline-block;
   margin: 18px 32px 28px;
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+.pc-card-feature .pc-card-feature-learn {
+  display: inline-block;
+  margin: 18px 32px 0;
+  margin-top: auto;
+  padding: 0;
+  border: none;
+  background: none;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  align-self: flex-start;
+}
+
+.pc-card-feature-details {
+  margin: 12px 32px 28px;
+  padding-top: 4px;
+  color: var(--foreground-muted);
+  font-size: 13px;
+  line-height: 1.65;
+  white-space: pre-line;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.pc-card-feature-details.is-open {
+  animation: pc-card-details-in 0.22s ease-out;
+}
+
+@keyframes pc-card-details-in {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .pc-panel {
@@ -669,8 +994,10 @@ a {
   border: none;
   background: none;
   cursor: pointer;
-  font: inherit;
-  color: inherit;
+  color: var(--foreground-muted);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.4;
   padding: 8px 2px;
 }
 
@@ -731,6 +1058,18 @@ a {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+}
+
+.pc-chip-link {
+  display: inline-flex;
+  text-decoration: none;
+  color: inherit;
+  border-radius: var(--radius-pill);
+}
+
+.pc-chip-link:focus-visible {
+  outline: 2px solid color-mix(in srgb, var(--foreground-default) 55%, transparent);
+  outline-offset: 3px;
 }
 
 .pc-audience-ctas {
@@ -807,13 +1146,52 @@ a {
   color: var(--foreground-default);
 }
 
-.pc-footer-grid.is-sevensense {
+.pc-footer-grid.is-agentspod {
   grid-template-columns: 1.3fr repeat(3, 1fr);
 }
 
+.pc-header-nav-internal {
+  justify-content: flex-start;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.pc-internal-hero {
+  margin-top: 48px;
+}
+
+.pc-internal-chip-row {
+  justify-content: center;
+}
+
+.pc-group-block {
+  margin-top: 20px;
+}
+
 @media (max-width: 1280px) {
+  .pc-wrap {
+    width: min(var(--pc-layout-max-width), calc(100vw - 32px));
+  }
+
   .pc-header-nav {
     display: none;
+  }
+
+  .pc-header-row {
+    grid-template-columns: auto auto;
+    justify-content: space-between;
+    column-gap: 12px;
+  }
+
+  .pc-header-ctas {
+    gap: 8px;
+  }
+
+  .pc-header-ctas .pc-btn {
+    min-height: 38px;
+    padding: 8px 12px;
+    font-size: 13px;
+    flex-shrink: 0;
   }
 
   .pc-hero {
@@ -823,9 +1201,44 @@ a {
     gap: 24px;
   }
 
+  .pc-hero-brands {
+    margin-top: 8px;
+  }
+
+  .pc-ai-brands-strip {
+    gap: 10px;
+    padding: 16px;
+    min-height: auto;
+  }
+
+  .pc-ai-brands-strip--bare {
+    padding: 8px 0;
+  }
+
+  .pc-ai-brand-slot-link,
+  .pc-ai-brand-slot-wrap {
+    flex: 0 0 min(152px, 44vw);
+    max-width: 100%;
+  }
+
+  .pc-ai-brand-slot {
+    min-height: 84px;
+    padding: 8px 10px;
+  }
+
+  .pc-ai-brand-slot-media {
+    min-height: 50px;
+    height: 50px;
+    padding: 4px 6px;
+  }
+
   .pc-hero-copy {
     padding-left: 0;
     padding-right: 0;
+  }
+
+  .pc-hero-cube-media {
+    transform: translateX(-12px);
   }
 
   .pc-text-h1-hero {
@@ -840,6 +1253,10 @@ a {
   .pc-impact-metrics,
   .pc-card-grid.is-toolkit {
     grid-template-columns: 1fr;
+  }
+
+  .pc-card-feature {
+    max-width: 100%;
   }
 
   .pc-quote-text {
