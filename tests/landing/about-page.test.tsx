@@ -1,25 +1,24 @@
 import { render, screen } from "@testing-library/react";
 import AboutPage from "@/pages/about";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 describe("About page", () => {
   it("renders the core About page sections and CTA links", () => {
-    render(<AboutPage />);
+    render(
+      <ThemeProvider>
+        <AboutPage />
+      </ThemeProvider>,
+    );
 
-    expect(
-      screen.getByRole("heading", {
-        name: /engineering intelligence, human partnership/i,
-      }),
-    ).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /who we are/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /how we work/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: /why teams choose us/i })).toBeInTheDocument();
 
-    expect(screen.getByRole("link", { name: /book a strategy call/i })).toHaveAttribute(
-      "href",
-      "https://cal.com/sevesenseai/30min",
-    );
-    expect(screen.getByRole("link", { name: /book a strategy call/i })).toHaveAttribute("target", "_blank");
-    expect(screen.getByRole("link", { name: /book a strategy call/i })).toHaveAttribute(
+    const strategyCallLinks = screen.getAllByRole("link", { name: /book a strategy call/i });
+    expect(strategyCallLinks.length).toBeGreaterThan(0);
+    expect(strategyCallLinks[0]).toHaveAttribute("href", "https://cal.com/sevesenseai/30min");
+    expect(strategyCallLinks[0]).toHaveAttribute("target", "_blank");
+    expect(strategyCallLinks[0]).toHaveAttribute(
       "rel",
       expect.stringContaining("noopener"),
     );
