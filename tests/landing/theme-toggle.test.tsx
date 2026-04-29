@@ -84,4 +84,12 @@ describe("LandingPage theme toggle", () => {
     expect(lightSurfacePage).not.toBe(darkSurfacePage);
     expect(lightTextPrimary).not.toBe(darkTextPrimary);
   });
+
+  it("shows About us in the landing header navigation", async () => {
+    renderWithThemeProvider();
+
+    await waitFor(() => {
+      expect(screen.getByRole("link", { name: /about us/i })).toHaveAttribute("href", "/about");
+    });
+  });
 });
