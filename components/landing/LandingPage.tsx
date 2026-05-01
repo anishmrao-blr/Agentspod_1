@@ -12,6 +12,7 @@ import {
   ComponentTextH1Hero,
   ComponentTextH2Section
 } from "./PencilComponentLibrary";
+import { FeaturedWork } from "./FeaturedWork";
 import { useTheme } from "@/components/theme/useTheme";
 import type { LandingContent } from "@/lib/directusLanding";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -29,35 +30,41 @@ const defaultServiceLinks = [
 
 const defaultToolkitCards = [
   {
-    title: "AI Agents",
-    body: "Autonomous systems that execute complex workflows 24/7.",
-    learnMoreHref: `${ORIGIN}/ai-agents`
+    title: "Stateful Agentic Workflows",
+    body: "Autonomous task execution using LangGraph and CrewAI for complex, non-linear business logic that requires memory and human-in-the-loop oversight.",
+    learnMoreHref: `${ORIGIN}/ai-agents`,
+    media: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&q=80"
   },
   {
-    title: "Voice AI",
-    body: "Human-parity voice interfaces for support and sales.",
-    learnMoreHref: `${ORIGIN}/voice-ai`
+    title: "Real-Time Voice Intelligence",
+    body: "Sub-300ms voice agents using ElevenLabs and custom STT/TTS pipelines, trained on domain-specific knowledge for healthcare, finance, and customer support.",
+    learnMoreHref: `${ORIGIN}/voice-ai`,
+    media: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&q=80"
   },
   {
-    title: "Custom Dev",
-    body: "Bespoke software architecture for unique business needs.",
-    learnMoreHref: `${ORIGIN}/software-development`
+    title: "Domain-Specific Intelligence",
+    body: "Custom model training and fine-tuning using high-fidelity synthetic datasets to ensure performance in data-scarce or privacy-sensitive sectors like insurance and mining.",
+    learnMoreHref: `${ORIGIN}/gen-ai`,
+    media: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&q=80"
   },
   {
-    title: "Generative AI",
-    body: "LLM integration for content, code, and creative generation.",
-    learnMoreHref: `${ORIGIN}/gen-ai`
+    title: "Enterprise-Grade Performance",
+    body: "Optimization across the Nvidia tool stack (NIMs) for ultra-low latency and hardware-accelerated agent performance in high-throughput environments.",
+    learnMoreHref: `${ORIGIN}/ai-agents`,
+    media: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&q=80"
   },
   {
-    title: "Data Science",
-    body: "Predictive modeling and deep analytics to drive decisions.",
-    learnMoreHref: `${ORIGIN}/data-science`
+    title: "Knowledge Sovereignty",
+    body: "Secure, cited enterprise RAG utilizing LlamaIndex and pgvector, deployed with strict data residency on AWS Sydney or Azure Australia East.",
+    learnMoreHref: `${ORIGIN}/data-science`,
+    media: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&auto=format&q=80"
   },
   {
-    title: "Automation",
-    body: "End-to-end process streamlining with intelligent logic.",
+    title: "Cognitive Data Triage",
+    body: "Autonomous extraction and processing of unstructured data (contracts, claims, manifests) using advanced agentic IDP patterns and multi-modal OCR.",
     learnMoreHref: "#contact",
-    learnMoreLabel: "Discuss automation"
+    learnMoreLabel: "Discuss a use case",
+    media: "https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=800&auto=format&q=80"
   }
 ];
 
@@ -94,10 +101,11 @@ const defaultFooterLinks = [
   { section: "solutions", label: "Generative AI", href: `${ORIGIN}/gen-ai` },
   { section: "solutions", label: "Data Science", href: `${ORIGIN}/data-science` },
   { section: "solutions", label: "Voice AI", href: `${ORIGIN}/voice-ai` },
-  { section: "company", label: "About", href: "#about" },
+  { section: "solutions", label: "Software Dev", href: `${ORIGIN}/software-development` },
+  { section: "company", label: "About", href: `${ORIGIN}/about` },
   { section: "company", label: "Case Studies", href: `${ORIGIN}/projects` },
   { section: "company", label: "Careers", href: `${ORIGIN}/careers` },
-  { section: "company", label: "Contact", href: "#contact" },
+  { section: "company", label: "Contact", href: `${ORIGIN}/contact` },
   { section: "legal", label: "Privacy", href: `${ORIGIN}/privacy` },
   { section: "legal", label: "Terms", href: `${ORIGIN}/terms` }
 ] as const;
@@ -211,7 +219,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
   const contactEmail = content?.contactEmail ?? "hello@agentspod.ai";
   const footerTagline = content?.footerTagline ?? "Engineering Intelligence.";
   const footerSubtitle = content?.footerSubtitle ?? "We build the AI infrastructure for founders and enterprises.";
-  const copyrightText = content?.copyrightText ?? "© 2026 Agendspod.AI. All rights reserved.";
+  const copyrightText = content?.copyrightText ?? "© 2026 Agentspod.AI. All rights reserved.";
   const heroImageSrc = content?.heroImageUrl ?? "/media/TOLMQ.png";
   const heroRef = useRef<HTMLElement | null>(null);
   const { scrollYProgress: heroScrollProgress } = useScroll({
@@ -280,7 +288,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
               whileHover={reduceHeavyMotion ? undefined : { y: -2 }}
               whileTap={reduceHeavyMotion ? undefined : { scale: 0.98 }}
             >
-              BOOK A MEET →
+              Book a meet →
             </m.a>
           </div>
         </div>
@@ -324,7 +332,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
               whileHover={reduceHeavyMotion ? undefined : { y: -2 }}
               whileTap={reduceHeavyMotion ? undefined : { scale: 0.98 }}
             >
-              BOOK A MEET
+              Book a meet
             </m.a>
           </div>
         </m.div>
@@ -440,6 +448,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
               <ComponentCardFeature
                 title={card.title}
                 body={card.body}
+                media={card.media}
                 learnMoreHref={card.learnMoreHref}
                 learnMoreLabel={card.learnMoreLabel ?? "Learn more"}
                 learnMoreTarget={card.learnMoreHref.startsWith("http") ? "_blank" : undefined}
@@ -449,6 +458,8 @@ export function LandingPage({ content }: { content?: LandingContent }) {
           ))}
         </m.div>
       </m.section>
+
+      <FeaturedWork />
 
       <m.section
         className="pc-wrap pc-section"

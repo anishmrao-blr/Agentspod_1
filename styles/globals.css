@@ -1263,3 +1263,220 @@ a {
     font-size: 30px;
   }
 }
+
+/* ── Featured Work strip ──────────────────────────────────────────── */
+.pc-featured-work-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (max-width: 900px) {
+  .pc-featured-work-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pc-featured-work-card {
+  border-radius: 0.75rem;
+  overflow: hidden;
+  background: var(--pc-surface-card);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--pc-border-subtle);
+}
+
+.pc-featured-work-media {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
+}
+
+.pc-featured-work-content {
+  padding: 1.25rem 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.pc-featured-work-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.18);
+  color: #818cf8;
+  width: fit-content;
+}
+
+.pc-featured-work-problem {
+  font-size: 0.9rem;
+  color: var(--pc-text-muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.pc-featured-work-outcome {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--pc-text-primary);
+  margin: 0;
+}
+
+.pc-featured-work-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+  margin-top: 0.25rem;
+}
+
+.pc-featured-work-badge {
+  font-size: 0.7rem;
+  font-weight: 500;
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.25rem;
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--pc-text-muted);
+  border: 1px solid var(--pc-border-subtle);
+}
+
+.pc-featured-work-link {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #818cf8;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  transition: opacity 0.2s;
+}
+
+.pc-featured-work-link:hover {
+  opacity: 0.75;
+}
+
+.pc-featured-work-cta {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.pc-featured-work-all {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: #818cf8;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.pc-featured-work-all:hover {
+  opacity: 0.75;
+}
+
+/* ── Projects page deep case study cards ────────────────────────── */
+.pc-projects-deep {
+  background: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid var(--pc-border-subtle);
+}
+
+.pc-project-cards-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.pc-project-card {
+  border-radius: 1rem;
+  overflow: hidden;
+  background: var(--pc-surface-card);
+  border: 1px solid var(--pc-border-subtle);
+}
+
+.pc-project-card-media {
+  height: 280px;
+  background-size: cover;
+  background-position: center;
+}
+
+.pc-project-card-body {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pc-project-card-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.pc-project-card-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(99, 102, 241, 0.18);
+  color: #818cf8;
+  width: fit-content;
+}
+
+.pc-project-card-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--pc-text-primary);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.pc-project-card-metric {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #818cf8;
+  margin: 0;
+}
+
+.pc-project-card-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .pc-project-card-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pc-project-card-col-heading {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--pc-text-muted);
+  margin: 0 0 0.5rem;
+}
+
+.pc-project-card-col-body {
+  font-size: 0.9rem;
+  color: var(--pc-text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.pc-project-card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}

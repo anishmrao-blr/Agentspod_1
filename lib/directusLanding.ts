@@ -7,7 +7,7 @@ export type HeroAiBrand = {
 };
 
 export type ServiceLink = { label: string; href: string };
-export type ToolkitCard = { title: string; body: string; learnMoreHref: string; learnMoreLabel?: string };
+export type ToolkitCard = { title: string; body: string; learnMoreHref: string; learnMoreLabel?: string; media?: string };
 export type ImpactStat = { value: string; label: string };
 export type AudienceCard = {
   eyebrow: string;

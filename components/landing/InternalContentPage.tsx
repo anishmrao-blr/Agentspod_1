@@ -34,6 +34,7 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
   const { theme, toggleTheme } = useTheme();
   const isExternalCta = isExternalHref(page.primaryCtaHref);
   const hideHeroSection = page.slug === "projects";
+  const hideCapabilities = page.slug === "privacy" || page.slug === "terms";
   const allFilterLabel = "All";
   const groupedSections = page.capabilityGroups ?? [];
   const sectionHeading = groupedSections.length ? page.capabilitiesSectionTitle : page.capabilitiesSectionTitle ?? "Technical Capabilities";
@@ -71,6 +72,7 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
                 </div>
               </div>
               <ComponentNavMenuItemLink href={`${ORIGIN}/projects`}>Case Studies</ComponentNavMenuItemLink>
+              <ComponentNavMenuItemLink href={`${ORIGIN}/about`}>About us</ComponentNavMenuItemLink>
               <ComponentNavMenuItemLink href={`${ORIGIN}/careers`}>Careers</ComponentNavMenuItemLink>
               <ComponentNavMenuItemLink href={`${ORIGIN}/contact`}>Contact</ComponentNavMenuItemLink>
             </nav>
@@ -90,7 +92,7 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                BOOK A MEET →
+                Book a meet →
               </a>
             </div>
           </div>
@@ -132,7 +134,7 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
           </section>
         ) : null}
 
-        <section className="pc-wrap pc-section">
+        {!hideCapabilities ? <section className="pc-wrap pc-section">
           {sectionHeading ? <ComponentTextH2Section>{sectionHeading}</ComponentTextH2Section> : null}
           {groupedSections.length ? (
             <>
@@ -171,6 +173,7 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
                         key={`${group.title}-${item.title}`}
                         title={item.title}
                         body={item.body}
+                        media={item.image}
                         details={item.details}
                         learnMoreLabel="Learn more"
                       />
@@ -179,6 +182,7 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
                         key={`${group.title}-${item.title}`}
                         title={item.title}
                         body={item.body}
+                        media={item.image}
                         learnMoreHref={learnMoreHref}
                         learnMoreLabel="Learn more"
                         learnMoreTarget={learnExternal ? "_blank" : undefined}
@@ -196,12 +200,13 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
                 const learnMoreHref = item.learnMoreHref ?? page.primaryCtaHref;
                 const learnExternal = isExternalHref(learnMoreHref);
                 return item.details ? (
-                  <ExpandableCardFeature key={item.title} title={item.title} body={item.body} details={item.details} learnMoreLabel="Learn more" />
+                  <ExpandableCardFeature key={item.title} title={item.title} body={item.body} media={item.image} details={item.details} learnMoreLabel="Learn more" />
                 ) : (
                   <ComponentCardFeature
                     key={item.title}
                     title={item.title}
                     body={item.body}
+                    media={item.image}
                     learnMoreHref={learnMoreHref}
                     learnMoreLabel="Learn more"
                     learnMoreTarget={learnExternal ? "_blank" : undefined}
@@ -211,7 +216,7 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
               })}
             </div>
           )}
-        </section>
+        </section> : null}
 
         <section className="pc-wrap pc-section pc-cta">
           <ComponentTextH2Section>{page.closingHeading}</ComponentTextH2Section>
