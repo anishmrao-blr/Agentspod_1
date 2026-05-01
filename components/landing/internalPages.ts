@@ -103,7 +103,7 @@ const internalPagesCore = {
       "Market Research & Analysis"
     ],
     capabilities: [
-      { title: "24/7 Operation", body: "Agents that never sleep, ensuring your business is always on.", image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&auto=format&q=80" },
+      { title: "24/7 Operation", body: "Agents that never sleep, ensuring your business is always on.", image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=800&auto=format&q=80" },
       { title: "Multi-Modal", body: "Process text, voice, and images seamlessly.", image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&auto=format&q=80" },
       { title: "Self-Improving", body: "Systems that learn from interactions to get better over time.", image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&auto=format&q=80" },
       { title: "Secure by Design", body: "Enterprise-grade security protocols built into every agent.", image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&auto=format&q=80" }
@@ -133,7 +133,7 @@ const internalPagesCore = {
         image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&q=80"
       },
       { title: "RAG for Knowledge Work", body: "Instant retrieval across your internal document archive.", image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&auto=format&q=80" },
-      { title: "Multi-Modal Content", body: "Generate legal, property, and marketing assets from one platform.", image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&auto=format&q=80" },
+      { title: "Multi-Modal Content", body: "Generate legal, property, and marketing assets from one platform.", image: "https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=800&auto=format&q=80" },
       { title: "Data Sovereignty", body: "Your data trains your models while preserving privacy and ownership.", image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&auto=format&q=80" }
     ],
     closingHeading: "Innovate Faster.",
@@ -179,7 +179,7 @@ const internalPagesCore = {
       "Voice-Activated IoT Control"
     ],
     capabilities: [
-      { title: "24/7 Live Support", body: "Scale support capacity instantly with always-on service quality.", image: "https://images.unsplash.com/photo-1523966211575-5a19e5d59eb2?w=800&auto=format&q=80" },
+      { title: "24/7 Live Support", body: "Scale support capacity instantly with always-on service quality.", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&q=80" },
       { title: "Cost Efficiency", body: "Reduce operational overhead while maintaining quality interactions.", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&q=80" },
       { title: "Ultra-Low Latency", body: "Natural responses with sub-second response loops.", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&q=80" },
       { title: "Emotion Analysis", body: "Detect tone and sentiment to adapt responses dynamically.", image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&auto=format&q=80" }
@@ -201,7 +201,7 @@ const internalPagesCore = {
       { title: "SaaS Development", body: "Multi-tenant products, billing systems, and cloud architecture.", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&q=80" },
       { title: "App Development", body: "Native and cross-platform mobile apps with resilient offline flows.", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&q=80" },
       { title: "Modern WebApps", body: "High-performance React and Next.js applications for superior UX.", image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&auto=format&q=80" },
-      { title: "Enterprise Tech", body: "Custom internal tools, ERP integrations, and secure data workflows.", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&q=80" }
+      { title: "Enterprise Tech", body: "Custom internal tools, ERP integrations, and secure data workflows.", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&q=80" }
     ],
     closingHeading: "Build to Last.",
     closingBody: "Partner with engineers who care about code quality as much as product outcomes."

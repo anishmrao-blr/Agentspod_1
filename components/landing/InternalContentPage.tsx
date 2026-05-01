@@ -72,6 +72,7 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
                 </div>
               </div>
               <ComponentNavMenuItemLink href={`${ORIGIN}/projects`}>Case Studies</ComponentNavMenuItemLink>
+              <ComponentNavMenuItemLink href={`${ORIGIN}/about`}>About us</ComponentNavMenuItemLink>
               <ComponentNavMenuItemLink href={`${ORIGIN}/careers`}>Careers</ComponentNavMenuItemLink>
               <ComponentNavMenuItemLink href={`${ORIGIN}/contact`}>Contact</ComponentNavMenuItemLink>
             </nav>
