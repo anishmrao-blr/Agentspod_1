@@ -89,7 +89,9 @@ describe("LandingPage theme toggle", () => {
     renderWithThemeProvider();
 
     await waitFor(() => {
-      expect(screen.getByRole("link", { name: /about us/i })).toHaveAttribute("href", "/about");
+      const aboutLinks = screen.getAllByRole("link", { name: /about us/i });
+      expect(aboutLinks.length).toBeGreaterThan(0);
+      expect(aboutLinks.some((link) => link.getAttribute("href") === "/about")).toBe(true);
     });
   });
 });

@@ -69,7 +69,6 @@ const defaultToolkitCards = [
 ];
 
 const defaultImpactStats = [
-  { value: "10+", label: "Research Papers & Patents" },
   { value: "30+", label: "In-House Engineers" },
   { value: "75+", label: "Successful Projects" }
 ];
@@ -89,7 +88,7 @@ const defaultAudienceCards = [
     eyebrow: "FOR ENTERPRISE",
     title: "Deploy a Solution",
     description:
-      "Automate operations and unlock new ROI. We integrate intelligent agents and voice systems directly into your workflows.",
+      "Automate operations and unlock new ROI. We integrate intelligent agents into your workflows and help you manage the intelligence layer for your business.",
     chips: ["VOICE_AI", "PROCESS_AUTO", "AGENTS"],
     ctaLabel: "Deploy a Solution",
     ctaHref: `${ORIGIN}/contact?type=enterprise`
@@ -293,6 +292,23 @@ export function LandingPage({ content }: { content?: LandingContent }) {
           </div>
         </div>
       </m.header>
+      <nav className="pc-wrap pc-mobile-nav" aria-label="Primary mobile navigation">
+        <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={`${ORIGIN}/ai-agents`}>
+          Services
+        </a>
+        <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={`${ORIGIN}/projects`}>
+          Case Studies
+        </a>
+        <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href="/about">
+          About us
+        </a>
+        <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={`${ORIGIN}/careers`}>
+          Careers
+        </a>
+        <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href="#contact">
+          Contact
+        </a>
+      </nav>
 
       <m.section
         className="pc-wrap pc-hero"

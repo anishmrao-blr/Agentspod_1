@@ -1168,6 +1168,10 @@ a {
   margin-top: 20px;
 }
 
+.pc-mobile-nav {
+  display: none;
+}
+
 @media (max-width: 1280px) {
   .pc-wrap {
     width: min(var(--pc-layout-max-width), calc(100vw - 32px));
@@ -1191,6 +1195,27 @@ a {
     min-height: 38px;
     padding: 8px 12px;
     font-size: 13px;
+    flex-shrink: 0;
+  }
+
+  .pc-mobile-nav {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .pc-mobile-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .pc-mobile-nav .pc-btn {
+    min-height: 34px;
+    padding: 7px 12px;
+    font-size: 12px;
     flex-shrink: 0;
   }
 

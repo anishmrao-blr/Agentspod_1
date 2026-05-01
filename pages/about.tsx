@@ -65,6 +65,23 @@ export default function AboutPage() {
             </div>
           </div>
         </header>
+        <nav className="pc-wrap pc-mobile-nav" aria-label="About mobile navigation">
+          <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={`${ORIGIN}/ai-agents`}>
+            Services
+          </a>
+          <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={`${ORIGIN}/projects`}>
+            Case Studies
+          </a>
+          <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href="/about">
+            About us
+          </a>
+          <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={`${ORIGIN}/careers`}>
+            Careers
+          </a>
+          <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={`${ORIGIN}/contact`}>
+            Contact
+          </a>
+        </nav>
 
         <section className="pc-wrap pc-section pc-cta" aria-label="About intro">
           <div style={{ margin: "0 auto", maxWidth: 980, textAlign: "center" }}>
