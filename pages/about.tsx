@@ -3,7 +3,7 @@ import { ComponentLogoAIAgentsPodCubeMark, ComponentNavMenuItemLink } from "@/co
 import { useTheme } from "@/components/theme/useTheme";
 
 const ORIGIN = "";
-const CALENDAR_LINK = "https://cal.com/sevesenseai/30min";
+const CALENDAR_LINK = "https://cal.com/swami-tpxjxh";
 const serviceLinks = [
   { label: "AI Agents", href: `${ORIGIN}/ai-agents` },
   { label: "Generative AI", href: `${ORIGIN}/gen-ai` },
@@ -18,7 +18,7 @@ export default function AboutPage() {
   return (
     <>
       <Head>
-        <title>About Us | Agendspod.AI</title>
+        <title>About Us | Agentspod.AI</title>
         <meta
           name="description"
           content="We partner with founders and enterprises to deliver outcome-driven AI systems, combining deep engineering intelligence with hands-on collaboration from strategy to scale."

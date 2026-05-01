@@ -34,6 +34,7 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
   const { theme, toggleTheme } = useTheme();
   const isExternalCta = isExternalHref(page.primaryCtaHref);
   const hideHeroSection = page.slug === "projects";
+  const hideCapabilities = page.slug === "privacy" || page.slug === "terms";
   const allFilterLabel = "All";
   const groupedSections = page.capabilityGroups ?? [];
   const sectionHeading = groupedSections.length ? page.capabilitiesSectionTitle : page.capabilitiesSectionTitle ?? "Technical Capabilities";
@@ -132,7 +133,7 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
           </section>
         ) : null}
 
-        <section className="pc-wrap pc-section">
+        {!hideCapabilities ? <section className="pc-wrap pc-section">
           {sectionHeading ? <ComponentTextH2Section>{sectionHeading}</ComponentTextH2Section> : null}
           {groupedSections.length ? (
             <>
@@ -214,7 +215,7 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
               })}
             </div>
           )}
-        </section>
+        </section> : null}
 
         <section className="pc-wrap pc-section pc-cta">
           <ComponentTextH2Section>{page.closingHeading}</ComponentTextH2Section>
