@@ -60,7 +60,7 @@ export default function AboutPage() {
                 {theme === "light" ? "Light" : "Dark"}
               </button>
               <a className="pc-btn pc-btn-primary-header pc-btn-anchor" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">
-                BOOK A MEET →
+                Book a meet →
               </a>
             </div>
           </div>

@@ -218,7 +218,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
   const contactEmail = content?.contactEmail ?? "hello@agentspod.ai";
   const footerTagline = content?.footerTagline ?? "Engineering Intelligence.";
   const footerSubtitle = content?.footerSubtitle ?? "We build the AI infrastructure for founders and enterprises.";
-  const copyrightText = content?.copyrightText ?? "© 2026 Agendspod.AI. All rights reserved.";
+  const copyrightText = content?.copyrightText ?? "© 2026 Agentspod.AI. All rights reserved.";
   const heroImageSrc = content?.heroImageUrl ?? "/media/TOLMQ.png";
   const heroRef = useRef<HTMLElement | null>(null);
   const { scrollYProgress: heroScrollProgress } = useScroll({
@@ -287,7 +287,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
               whileHover={reduceHeavyMotion ? undefined : { y: -2 }}
               whileTap={reduceHeavyMotion ? undefined : { scale: 0.98 }}
             >
-              BOOK A MEET →
+              Book a meet →
             </m.a>
           </div>
         </div>
@@ -331,7 +331,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
               whileHover={reduceHeavyMotion ? undefined : { y: -2 }}
               whileTap={reduceHeavyMotion ? undefined : { scale: 0.98 }}
             >
-              BOOK A MEET
+              Book a meet
             </m.a>
           </div>
         </m.div>

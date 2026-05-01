@@ -90,7 +90,7 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                BOOK A MEET →
+                Book a meet →
               </a>
             </div>
           </div>
