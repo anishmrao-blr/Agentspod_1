@@ -41,7 +41,7 @@ function buildCareersPage(): InternalPageData {
 
   return {
     slug: "careers",
-    title: "Careers | Agendspod.AI",
+    title: "Careers | Agentspod.AI",
     description: "Open engineering, architecture, frontend, and product design roles. Apply via our Google Forms.",
     heroHeading: "Join the Intelligence Revolution",
     heroBody:
@@ -59,22 +59,26 @@ function buildCareersPage(): InternalPageData {
       {
         title: "Remote-first team",
         body: "Collaborate globally across engineering, product, and design.",
-        learnMoreHref: m.capabilityFormUrls["Remote-first team"]
+        learnMoreHref: m.capabilityFormUrls["Remote-first team"],
+        image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&auto=format&q=80"
       },
       {
         title: "High-impact work",
         body: "Build AI systems deployed in real enterprise and startup contexts.",
-        learnMoreHref: m.capabilityFormUrls["High-impact work"]
+        learnMoreHref: m.capabilityFormUrls["High-impact work"],
+        image: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&auto=format&q=80"
       },
       {
         title: "Cross-functional exposure",
         body: "Work across model, platform, and user experience layers.",
-        learnMoreHref: m.capabilityFormUrls["Cross-functional exposure"]
+        learnMoreHref: m.capabilityFormUrls["Cross-functional exposure"],
+        image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&q=80"
       },
       {
         title: "Open applications",
         body: "Exceptional talent is always welcome even beyond listed roles.",
-        learnMoreHref: m.capabilityFormUrls["Open applications"]
+        learnMoreHref: m.capabilityFormUrls["Open applications"],
+        image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&auto=format&q=80"
       }
     ],
     closingHeading: "Don't see your role?",
@@ -99,10 +103,10 @@ const internalPagesCore = {
       "Market Research & Analysis"
     ],
     capabilities: [
-      { title: "24/7 Operation", body: "Agents that never sleep, ensuring your business is always on." },
-      { title: "Multi-Modal", body: "Process text, voice, and images seamlessly." },
-      { title: "Self-Improving", body: "Systems that learn from interactions to get better over time." },
-      { title: "Secure by Design", body: "Enterprise-grade security protocols built into every agent." }
+      { title: "24/7 Operation", body: "Agents that never sleep, ensuring your business is always on.", image: "https://images.unsplash.com/photo-1558618047-3c8c76ca7d13?w=800&auto=format&q=80" },
+      { title: "Multi-Modal", body: "Process text, voice, and images seamlessly.", image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&auto=format&q=80" },
+      { title: "Self-Improving", body: "Systems that learn from interactions to get better over time.", image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&auto=format&q=80" },
+      { title: "Secure by Design", body: "Enterprise-grade security protocols built into every agent.", image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&auto=format&q=80" }
     ],
     closingHeading: "Ready to Automate?",
     closingBody: "Let's build a custom agent workforce tailored to your specific business needs."
@@ -125,11 +129,12 @@ const internalPagesCore = {
     capabilities: [
       {
         title: "Industry-Specific Training",
-        body: "Models fine-tuned on your sector's proprietary datasets for unmatched relevance."
+        body: "Models fine-tuned on your sector's proprietary datasets for unmatched relevance.",
+        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&q=80"
       },
-      { title: "RAG for Knowledge Work", body: "Instant retrieval across your internal document archive." },
-      { title: "Multi-Modal Content", body: "Generate legal, property, and marketing assets from one platform." },
-      { title: "Data Sovereignty", body: "Your data trains your models while preserving privacy and ownership." }
+      { title: "RAG for Knowledge Work", body: "Instant retrieval across your internal document archive.", image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&auto=format&q=80" },
+      { title: "Multi-Modal Content", body: "Generate legal, property, and marketing assets from one platform.", image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&auto=format&q=80" },
+      { title: "Data Sovereignty", body: "Your data trains your models while preserving privacy and ownership.", image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&auto=format&q=80" }
     ],
     closingHeading: "Innovate Faster.",
     closingBody: "Deploy custom Generative AI models that create measurable competitive advantage."
@@ -150,10 +155,10 @@ const internalPagesCore = {
       "Dynamic Pricing Engines"
     ],
     capabilities: [
-      { title: "Predictive Modeling", body: "Forecast trends, churn, and demand with high-accuracy models." },
-      { title: "Data Infrastructure", body: "Scalable ETL pipelines and data warehouses for advanced analytics." },
-      { title: "Computer Vision", body: "Extract insights from image and video pipelines for automation." },
-      { title: "NLP & Text Mining", body: "Uncover sentiment and hidden patterns in unstructured text data." }
+      { title: "Predictive Modeling", body: "Forecast trends, churn, and demand with high-accuracy models.", image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&auto=format&q=80" },
+      { title: "Data Infrastructure", body: "Scalable ETL pipelines and data warehouses for advanced analytics.", image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&q=80" },
+      { title: "Computer Vision", body: "Extract insights from image and video pipelines for automation.", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&q=80" },
+      { title: "NLP & Text Mining", body: "Uncover sentiment and hidden patterns in unstructured text data.", image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?w=800&auto=format&q=80" }
     ],
     closingHeading: "Unlock Your Data.",
     closingBody: "Stop guessing and start knowing with analytics systems built for real outcomes."
@@ -174,10 +179,10 @@ const internalPagesCore = {
       "Voice-Activated IoT Control"
     ],
     capabilities: [
-      { title: "24/7 Live Support", body: "Scale support capacity instantly with always-on service quality." },
-      { title: "Cost Efficiency", body: "Reduce operational overhead while maintaining quality interactions." },
-      { title: "Ultra-Low Latency", body: "Natural responses with sub-second response loops." },
-      { title: "Emotion Analysis", body: "Detect tone and sentiment to adapt responses dynamically." }
+      { title: "24/7 Live Support", body: "Scale support capacity instantly with always-on service quality.", image: "https://images.unsplash.com/photo-1523966211575-5a19e5d59eb2?w=800&auto=format&q=80" },
+      { title: "Cost Efficiency", body: "Reduce operational overhead while maintaining quality interactions.", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&q=80" },
+      { title: "Ultra-Low Latency", body: "Natural responses with sub-second response loops.", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&q=80" },
+      { title: "Emotion Analysis", body: "Detect tone and sentiment to adapt responses dynamically.", image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&auto=format&q=80" }
     ],
     closingHeading: "Talk to the Future.",
     closingBody: "Deploy voice agents that delight customers and reduce operational costs."
@@ -193,10 +198,10 @@ const internalPagesCore = {
     primaryCtaHref: "/contact",
     highlights: ["Idea to MVP in 25 Days", "MVP to Product in +25 Days", "Polished UI", "Production-Grade Backend"],
     capabilities: [
-      { title: "SaaS Development", body: "Multi-tenant products, billing systems, and cloud architecture." },
-      { title: "App Development", body: "Native and cross-platform mobile apps with resilient offline flows." },
-      { title: "Modern WebApps", body: "High-performance React and Next.js applications for superior UX." },
-      { title: "Enterprise Tech", body: "Custom internal tools, ERP integrations, and secure data workflows." }
+      { title: "SaaS Development", body: "Multi-tenant products, billing systems, and cloud architecture.", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&q=80" },
+      { title: "App Development", body: "Native and cross-platform mobile apps with resilient offline flows.", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&q=80" },
+      { title: "Modern WebApps", body: "High-performance React and Next.js applications for superior UX.", image: "https://images.unsplash.com/photo-1547658719-da2b51169166?w=800&auto=format&q=80" },
+      { title: "Enterprise Tech", body: "Custom internal tools, ERP integrations, and secure data workflows.", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&auto=format&q=80" }
     ],
     closingHeading: "Build to Last.",
     closingBody: "Partner with engineers who care about code quality as much as product outcomes."

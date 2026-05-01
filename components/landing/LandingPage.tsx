@@ -101,10 +101,11 @@ const defaultFooterLinks = [
   { section: "solutions", label: "Generative AI", href: `${ORIGIN}/gen-ai` },
   { section: "solutions", label: "Data Science", href: `${ORIGIN}/data-science` },
   { section: "solutions", label: "Voice AI", href: `${ORIGIN}/voice-ai` },
-  { section: "company", label: "About", href: "#about" },
+  { section: "solutions", label: "Software Dev", href: `${ORIGIN}/software-development` },
+  { section: "company", label: "About", href: `${ORIGIN}/about` },
   { section: "company", label: "Case Studies", href: `${ORIGIN}/projects` },
   { section: "company", label: "Careers", href: `${ORIGIN}/careers` },
-  { section: "company", label: "Contact", href: "#contact" },
+  { section: "company", label: "Contact", href: `${ORIGIN}/contact` },
   { section: "legal", label: "Privacy", href: `${ORIGIN}/privacy` },
   { section: "legal", label: "Terms", href: `${ORIGIN}/terms` }
 ] as const;

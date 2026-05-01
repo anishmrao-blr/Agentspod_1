@@ -198,12 +198,13 @@ export function InternalContentPage({ page }: InternalContentPageProps) {
                 const learnMoreHref = item.learnMoreHref ?? page.primaryCtaHref;
                 const learnExternal = isExternalHref(learnMoreHref);
                 return item.details ? (
-                  <ExpandableCardFeature key={item.title} title={item.title} body={item.body} details={item.details} learnMoreLabel="Learn more" />
+                  <ExpandableCardFeature key={item.title} title={item.title} body={item.body} media={item.image} details={item.details} learnMoreLabel="Learn more" />
                 ) : (
                   <ComponentCardFeature
                     key={item.title}
                     title={item.title}
                     body={item.body}
+                    media={item.image}
                     learnMoreHref={learnMoreHref}
                     learnMoreLabel="Learn more"
                     learnMoreTarget={learnExternal ? "_blank" : undefined}
