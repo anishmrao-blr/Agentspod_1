@@ -2,6 +2,7 @@ import Head from "next/head";
 import { InternalContentPage } from "@/components/landing/InternalContentPage";
 import { internalPages } from "@/components/landing/internalPages";
 import { ProjectCard } from "@/components/landing/ProjectCard";
+import { SiteHeader } from "@/components/landing/SiteHeader";
 
 const deepCaseStudies = [
   {
@@ -55,17 +56,20 @@ export default function ProjectsPage() {
           content="Anonymized case studies from our delivery team across AI agents, voice AI, IoT, computer vision, and compliance automation."
         />
       </Head>
-      <div className="pc-projects-deep">
-        <div className="pc-wrap pc-section">
-          <h1 className="pc-text-h2-section">Featured Case Studies</h1>
-          <div className="pc-project-cards-stack">
-            {deepCaseStudies.map((cs) => (
-              <ProjectCard key={cs.title} {...cs} />
-            ))}
+      <main className="pc-page">
+        <SiteHeader mobileNavAriaLabel="Case studies mobile navigation" />
+        <div className="pc-projects-deep">
+          <div className="pc-wrap pc-section">
+            <h1 className="pc-text-h2-section">Featured Case Studies</h1>
+            <div className="pc-project-cards-stack">
+              {deepCaseStudies.map((cs) => (
+                <ProjectCard key={cs.title} {...cs} />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-      <InternalContentPage page={internalPages.projects} />
+        <InternalContentPage page={internalPages.projects} embedded />
+      </main>
     </>
   );
 }

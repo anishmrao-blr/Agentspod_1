@@ -770,6 +770,8 @@ a {
   max-width: var(--pc-card-grid-max-width);
   margin-left: auto;
   margin-right: auto;
+  /* Cards size to their own content; avoids sibling cards stretching when one expands */
+  align-items: start;
 }
 
 .pc-card-feature {
@@ -848,6 +850,13 @@ a {
 
 .pc-card-feature-details.is-open {
   animation: pc-card-details-in 0.22s ease-out;
+  /* Keep expanded cards compact; scroll long case-study copy instead of huge layout shift */
+  max-height: min(52vh, 26rem);
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-gutter: stable;
 }
 
 @keyframes pc-card-details-in {
@@ -1335,8 +1344,9 @@ a {
   text-transform: uppercase;
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
-  background: rgba(99, 102, 241, 0.18);
-  color: #818cf8;
+  background: var(--pc-footer-block-bg);
+  color: var(--foreground-muted);
+  border: 1px solid var(--pc-border-subtle);
   width: fit-content;
 }
 
@@ -1376,7 +1386,7 @@ a {
   padding-top: 0.75rem;
   font-size: 0.85rem;
   font-weight: 500;
-  color: #818cf8;
+  color: var(--foreground-soft);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
@@ -1396,7 +1406,7 @@ a {
 .pc-featured-work-all {
   font-size: 0.95rem;
   font-weight: 600;
-  color: #818cf8;
+  color: var(--foreground-soft);
   text-decoration: none;
   transition: opacity 0.2s;
 }
@@ -1452,8 +1462,9 @@ a {
   text-transform: uppercase;
   padding: 0.2rem 0.6rem;
   border-radius: 999px;
-  background: rgba(99, 102, 241, 0.18);
-  color: #818cf8;
+  background: var(--pc-footer-block-bg);
+  color: var(--foreground-muted);
+  border: 1px solid var(--pc-border-subtle);
   width: fit-content;
 }
 
@@ -1468,7 +1479,7 @@ a {
 .pc-project-card-metric {
   font-size: 1.1rem;
   font-weight: 700;
-  color: #818cf8;
+  color: var(--foreground-success-tint);
   margin: 0;
 }
 

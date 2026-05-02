@@ -16,7 +16,7 @@ describe("About page", () => {
 
     const strategyCallLinks = screen.getAllByRole("link", { name: /book a strategy call/i });
     expect(strategyCallLinks.length).toBeGreaterThan(0);
-    expect(strategyCallLinks[0]).toHaveAttribute("href", "https://cal.com/sevesenseai/30min");
+    expect(strategyCallLinks[0]).toHaveAttribute("href", "https://cal.com/swami-tpxjxh");
     expect(strategyCallLinks[0]).toHaveAttribute("target", "_blank");
     expect(strategyCallLinks[0]).toHaveAttribute(
       "rel",

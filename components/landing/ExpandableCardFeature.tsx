@@ -41,7 +41,10 @@ export function ExpandableCardFeature({
       <div
         id={panelId}
         className={cls("pc-card-feature-details", open && "is-open")}
+        role="region"
+        aria-label="Case study details"
         hidden={!open}
+        tabIndex={open ? 0 : undefined}
         style={{ whiteSpace: "pre-line" }}
       >
         {details}

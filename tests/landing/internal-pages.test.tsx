@@ -2,7 +2,16 @@ import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { InternalContentPage } from "@/components/landing/InternalContentPage";
 import { internalPages } from "@/components/landing/internalPages";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 import "@/styles/globals.css";
+
+function renderInternal(page: Parameters<typeof InternalContentPage>[0]["page"]) {
+  return render(
+    <ThemeProvider>
+      <InternalContentPage page={page} />
+    </ThemeProvider>,
+  );
+}
 
 describe("Internal content pages", () => {
   it("has data entries for all non-home sitemap paths", () => {
@@ -27,7 +36,7 @@ describe("Internal content pages", () => {
   });
 
   it("renders a route model with headings and CTA", () => {
-    render(<InternalContentPage page={internalPages["ai-agents"]} />);
+    renderInternal(internalPages["ai-agents"]);
 
     expect(screen.getByRole("heading", { name: "AI Agents" })).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: "Deploy Agents" }).length).toBeGreaterThan(0);
@@ -36,7 +45,7 @@ describe("Internal content pages", () => {
 
   it("filters case studies by selected category", async () => {
     const user = userEvent.setup();
-    render(<InternalContentPage page={internalPages.projects} />);
+    renderInternal(internalPages.projects);
 
     expect(screen.getByRole("tab", { name: "All" })).toBeInTheDocument();
     expect(screen.getByText("AI-Driven Sanctions Intelligence & Real-Time Compliance System")).toBeInTheDocument();

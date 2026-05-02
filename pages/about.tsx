@@ -1,20 +1,9 @@
 import Head from "next/head";
-import { ComponentLogoAIAgentsPodCubeMark, ComponentNavMenuItemLink } from "@/components/landing/PencilComponentLibrary";
-import { useTheme } from "@/components/theme/useTheme";
+import { SiteHeader } from "@/components/landing/SiteHeader";
 
-const ORIGIN = "";
 const CALENDAR_LINK = "https://cal.com/swami-tpxjxh";
-const serviceLinks = [
-  { label: "AI Agents", href: `${ORIGIN}/ai-agents` },
-  { label: "Generative AI", href: `${ORIGIN}/gen-ai` },
-  { label: "Data Science", href: `${ORIGIN}/data-science` },
-  { label: "Voice AI", href: `${ORIGIN}/voice-ai` },
-  { label: "Software Dev", href: `${ORIGIN}/software-development` }
-];
 
 export default function AboutPage() {
-  const { theme, toggleTheme } = useTheme();
-
   return (
     <>
       <Head>
@@ -26,62 +15,7 @@ export default function AboutPage() {
       </Head>
 
       <main className="pc-page">
-        <header className="pc-header">
-          <div className="pc-wrap pc-header-row">
-            <a className="pc-brand" href="/">
-              <ComponentLogoAIAgentsPodCubeMark className="pc-brand-logo-cube-mark" />
-            </a>
-            <nav className="pc-header-nav" aria-label="Primary">
-              <div className="pc-nav-dropdown">
-                <button type="button" className="pc-nav-item has-chevron pc-nav-dropdown-trigger" aria-expanded="false">
-                  Services
-                </button>
-                <div className="pc-nav-dropdown-panel" role="menu">
-                  {serviceLinks.map((item) => (
-                    <a key={item.href} className="pc-nav-item" href={item.href}>
-                      {item.label}
-                    </a>
-                  ))}
-                </div>
-              </div>
-              <ComponentNavMenuItemLink href={`${ORIGIN}/projects`}>Case Studies</ComponentNavMenuItemLink>
-              <ComponentNavMenuItemLink href="/about">About us</ComponentNavMenuItemLink>
-              <ComponentNavMenuItemLink href={`${ORIGIN}/careers`}>Careers</ComponentNavMenuItemLink>
-              <ComponentNavMenuItemLink href={`${ORIGIN}/contact`}>Contact</ComponentNavMenuItemLink>
-            </nav>
-            <div className="pc-header-ctas">
-              <button
-                type="button"
-                className="pc-btn pc-btn-ghost-header pc-theme-toggle"
-                aria-label="Theme toggle"
-                aria-pressed={theme === "light"}
-                onClick={toggleTheme}
-              >
-                {theme === "light" ? "Light" : "Dark"}
-              </button>
-              <a className="pc-btn pc-btn-primary-header pc-btn-anchor" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">
-                Book a meet →
-              </a>
-            </div>
-          </div>
-        </header>
-        <nav className="pc-wrap pc-mobile-nav" aria-label="About mobile navigation">
-          <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={`${ORIGIN}/ai-agents`}>
-            Services
-          </a>
-          <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={`${ORIGIN}/projects`}>
-            Case Studies
-          </a>
-          <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href="/about">
-            About us
-          </a>
-          <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={`${ORIGIN}/careers`}>
-            Careers
-          </a>
-          <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={`${ORIGIN}/contact`}>
-            Contact
-          </a>
-        </nav>
+        <SiteHeader mobileNavAriaLabel="About mobile navigation" />
 
         <section className="pc-wrap pc-section pc-cta" aria-label="About intro">
           <div style={{ margin: "0 auto", maxWidth: 980, textAlign: "center" }}>
