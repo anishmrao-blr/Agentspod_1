@@ -1,0 +1,25 @@
+# Agentspod.AI
+
+> The technical partner for ambitious founders and forward-thinking enterprises. We build the AI systems that power the future.
+
+Agentspod.AI is an AI engineering consultancy that designs, builds, and deploys production AI systems for enterprise and startup clients. The company specialises in autonomous AI agents, LLM fine-tuning pipelines, voice AI, data science infrastructure, and full-stack software development. Delivered projects include LangGraph-based agentic workflows, ElevenLabs voice AI with sub-300ms latency, Snowflake analytics pipelines, and multi-tenant SaaS products on AWS and GCP.
+
+## Services
+
+- [AI Agents](https://agentspod.ai/ai-agents): Autonomous digital workers using LangGraph, multi-step pipelines, and CRM integrations. Case studies include multi-step ticket triage agents, autonomous SDR agents with CRM write-back, agentic IDP for contracts and claims, and stateful research agents with human-in-the-loop.
+
+- [Generative AI](https://agentspod.ai/gen-ai): LLM fine-tuning on proprietary domain datasets, LangChain RAG pipelines, SOW and contract review automation, DPDP and SOC 2 compliance tooling with Mistral and GPT-4o, and multi-modal RAG for content and knowledge operations.
+
+- [Data Science](https://agentspod.ai/data-science): Predictive modeling and ML pipelines. Work includes demand forecasting and inventory optimisation, behavioural churn modeling with Snowflake, real-time fraud scoring on streaming event data, and ML-driven dynamic pricing with feature stores.
+
+- [Voice AI](https://agentspod.ai/voice-ai): Conversational voice systems with sub-300ms latency built on ElevenLabs and STT providers. Includes inbound and outbound voice agents, CRM sync, natural language scheduling with calendar integration, and edge voice control for IoT environments.
+
+- [Software Development](https://agentspod.ai/software-development): End-to-end product engineering from idea to MVP in 25 days. React and Next.js frontends with design systems, multi-tenant SaaS architecture on AWS and GCP.
+
+## Company
+
+- Website: https://agentspod.ai
+- Contact: https://agentspod.ai/contact
+- Careers: https://agentspod.ai/careers
+- Projects: https://agentspod.ai/projects
+- About: https://agentspod.ai/about
