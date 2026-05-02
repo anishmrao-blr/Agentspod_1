@@ -97,10 +97,10 @@ const internalPagesCore = {
     primaryCtaLabel: "Deploy Agents",
     primaryCtaHref: "/contact",
     highlights: [
-      "Customer Support Automation",
-      "Lead Qualification & Outreach",
-      "Data Entry & Processing",
-      "Market Research & Analysis"
+      "Multi-Step Ticket Triage with LangGraph Agents",
+      "Autonomous SDR Agents with CRM Write-Back",
+      "Agentic IDP for Contracts, Claims & Manifests",
+      "Stateful Research Agents with Human-in-the-Loop"
     ],
     capabilities: [
       { title: "24/7 Operation", body: "Agents that never sleep, ensuring your business is always on.", image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=800&auto=format&q=80" },
@@ -121,10 +121,10 @@ const internalPagesCore = {
     primaryCtaLabel: "Build A GenAI Solution",
     primaryCtaHref: "/contact",
     highlights: [
-      "Legal Contract Analysis & Drafting",
-      "Real Estate Listing Generation",
-      "Personalized Marketing Campaigns",
-      "Automated Compliance Review"
+      "SOW & Contract Review via LangChain Pipelines",
+      "Fine-Tuned LLMs on Proprietary Domain Datasets",
+      "Multi-Modal RAG for Content & Knowledge Operations",
+      "DPDP / SOC 2 Automation with Mistral & GPT-4o"
     ],
     capabilities: [
       {
@@ -150,9 +150,9 @@ const internalPagesCore = {
     primaryCtaHref: "/contact",
     highlights: [
       "Demand Forecasting & Inventory Optimization",
-      "Customer Churn Prediction",
-      "Fraud Detection Systems",
-      "Dynamic Pricing Engines"
+      "Behavioral Churn Modeling with Snowflake Pipelines",
+      "Real-Time Fraud Scoring on Streaming Event Data",
+      "ML-Driven Dynamic Pricing with Feature Stores"
     ],
     capabilities: [
       { title: "Predictive Modeling", body: "Forecast trends, churn, and demand with high-accuracy models.", image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&auto=format&q=80" },
@@ -173,10 +173,10 @@ const internalPagesCore = {
     primaryCtaLabel: "Hear the Difference",
     primaryCtaHref: "/contact",
     highlights: [
-      "Inbound Customer Support",
-      "Outbound Sales & Qualification",
-      "Appointment Scheduling",
-      "Voice-Activated IoT Control"
+      "Sub-300ms Inbound Voice Agents (ElevenLabs + STT)",
+      "Outbound SDR Bots with CRM Sync",
+      "Natural Language Scheduling with Calendar Integration",
+      "Edge Voice Control for IoT & Smart Environments"
     ],
     capabilities: [
       { title: "24/7 Live Support", body: "Scale support capacity instantly with always-on service quality.", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&q=80" },
@@ -196,7 +196,7 @@ const internalPagesCore = {
       "The backbone of every digital product: robust, scalable, and maintainable software engineered for growth.",
     primaryCtaLabel: "Start Your 50-Day Sprint",
     primaryCtaHref: "/contact",
-    highlights: ["Idea to MVP in 25 Days", "MVP to Product in +25 Days", "Polished UI", "Production-Grade Backend"],
+    highlights: ["Idea to MVP in 25 Days", "MVP to Product in +25 Days", "React/Next.js Frontend with Design Systems", "Multi-Tenant SaaS Architecture on AWS/GCP"],
     capabilities: [
       { title: "SaaS Development", body: "Multi-tenant products, billing systems, and cloud architecture.", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&q=80" },
       { title: "App Development", body: "Native and cross-platform mobile apps with resilient offline flows.", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&auto=format&q=80" },
