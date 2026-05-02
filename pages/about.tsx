@@ -67,30 +67,22 @@ export default function AboutPage() {
           <div className="pc-card-grid is-toolkit" style={{ marginTop: 26 }}>
             <article className="pc-card-feature">
               <p className="pc-eyebrow">01</p>
-              <h3 className="pc-text-h2-section" style={{ fontSize: "1.4rem", marginBottom: 8 }}>
-                Discover
-              </h3>
+              <h3 className="pc-card-feature-step-title">Discover</h3>
               <p className="pc-text-body-soft">Align business outcomes, technical constraints, and success metrics.</p>
             </article>
             <article className="pc-card-feature">
               <p className="pc-eyebrow">02</p>
-              <h3 className="pc-text-h2-section" style={{ fontSize: "1.4rem", marginBottom: 8 }}>
-                Design
-              </h3>
+              <h3 className="pc-card-feature-step-title">Design</h3>
               <p className="pc-text-body-soft">Turn requirements into clear architecture, scope, and execution plans.</p>
             </article>
             <article className="pc-card-feature">
               <p className="pc-eyebrow">03</p>
-              <h3 className="pc-text-h2-section" style={{ fontSize: "1.4rem", marginBottom: 8 }}>
-                Build
-              </h3>
+              <h3 className="pc-card-feature-step-title">Build</h3>
               <p className="pc-text-body-soft">Ship in short milestones with reliable quality and visible delivery progress.</p>
             </article>
             <article className="pc-card-feature">
               <p className="pc-eyebrow">04</p>
-              <h3 className="pc-text-h2-section" style={{ fontSize: "1.4rem", marginBottom: 8 }}>
-                Scale
-              </h3>
+              <h3 className="pc-card-feature-step-title">Scale</h3>
               <p className="pc-text-body-soft">Optimize systems, hand over cleanly, and support sustained growth.</p>
             </article>
           </div>
