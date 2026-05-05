@@ -213,8 +213,10 @@ export function LandingPage({ content }: { content?: LandingContent }) {
   const contactHeading = content?.contactHeading ?? "Contact";
   const contactDescription = content?.contactDescription ?? "Get in touch with our engineering team to discuss your AI project.";
   const defaultMeetingUrl = "https://cal.com/swami-tpxjxh";
+  const defaultAnishMeetingUrl = "https://cal.com/anish-rao-drqgh9";
   const cmsMeetingUrl = content?.meetingUrl?.trim();
   const meetingUrl = cmsMeetingUrl ?? defaultMeetingUrl;
+  const anishMeetingUrl = content?.anishMeetingUrl?.trim() ?? defaultAnishMeetingUrl;
   const contactEmail = content?.contactEmail ?? "hello@agentspod.ai";
   const footerTagline = content?.footerTagline ?? "Engineering Intelligence.";
   const footerSubtitle = content?.footerSubtitle ?? "We build the AI infrastructure for founders and enterprises.";
@@ -281,9 +283,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
             </m.button>
             <m.a
               className="pc-btn pc-btn-primary-header pc-btn-anchor"
-              href="https://cal.com/swami-tpxjxh"
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`${ORIGIN}/qualify`}
               whileHover={reduceHeavyMotion ? undefined : { y: -2 }}
               whileTap={reduceHeavyMotion ? undefined : { scale: 0.98 }}
             >
@@ -342,9 +342,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
             </m.a>
             <m.a
               className="pc-btn pc-btn-ghost-hero pc-btn-anchor"
-              href={meetingUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+              href={`${ORIGIN}/qualify`}
               whileHover={reduceHeavyMotion ? undefined : { y: -2 }}
               whileTap={reduceHeavyMotion ? undefined : { scale: 0.98 }}
             >
@@ -570,9 +568,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
         <div className="pc-contact-links">
           <m.a
             className="pc-btn pc-btn-primary-hero pc-btn-anchor"
-            href={meetingUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={`${ORIGIN}/qualify`}
             whileHover={reduceHeavyMotion ? undefined : { y: -2 }}
             whileTap={reduceHeavyMotion ? undefined : { scale: 0.98 }}
           >
@@ -609,7 +605,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
                 LinkedIn
               </a>
               <a href={`mailto:${contactEmail}`}>Email</a>
-              <a href={meetingUrl} target="_blank" rel="noopener noreferrer">
+              <a href={`${ORIGIN}/qualify`}>
                 Book a Meeting
               </a>
             </div>
