@@ -39,6 +39,7 @@ export type LandingContent = {
   contactDescription?: string;
   contactEmail?: string;
   meetingUrl?: string;
+  anishMeetingUrl?: string;
   footerTagline?: string;
   footerSubtitle?: string;
   copyrightText?: string;
@@ -68,6 +69,7 @@ type LandingPageRecord = {
   contact_description?: string;
   contact_email?: string;
   meeting_url?: string;
+  anish_meeting_url?: string;
   footer_tagline?: string;
   footer_subtitle?: string;
   copyright_text?: string;
@@ -175,6 +177,7 @@ export async function fetchLandingContentFromDirectus(pageSlug = "home"): Promis
       contactDescription: page.contact_description,
       contactEmail: page.contact_email,
       meetingUrl: page.meeting_url,
+      anishMeetingUrl: page.anish_meeting_url,
       footerTagline: page.footer_tagline,
       footerSubtitle: page.footer_subtitle,
       copyrightText: page.copyright_text,
