@@ -2,18 +2,22 @@ import Head from "next/head";
 import { InternalContentPage } from "../components/landing/InternalContentPage";
 import { internalPages } from "../components/landing/internalPages";
 
-const page = internalPages["voice-ai"];
+const page = internalPages["rag-knowledge"];
 
-export default function VoiceAIPage() {
+export default function RAGKnowledgePage() {
   return (
     <>
       <Head>
         <title>{page.title}</title>
         <meta name="description" content={page.description} />
+        <meta
+          name="keywords"
+          content="RAG implementation, retrieval augmented generation, enterprise search AI, vector database, Pinecone, Weaviate, knowledge management AI, private data search, document AI, RAG pilot India"
+        />
         <meta property="og:title" content={page.title} />
         <meta property="og:description" content={page.description} />
-        <meta property="og:url" content="https://agentspod.ai/voice-ai" />
-        <link rel="canonical" href="https://agentspod.ai/voice-ai" />
+        <meta property="og:url" content="https://agentspod.ai/rag-knowledge" />
+        <link rel="canonical" href="https://agentspod.ai/rag-knowledge" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -27,7 +31,7 @@ export default function VoiceAIPage() {
                 name: "Agentspod.AI",
                 url: "https://agentspod.ai",
               },
-              url: "https://agentspod.ai/voice-ai",
+              url: "https://agentspod.ai/rag-knowledge",
             }),
           }}
         />

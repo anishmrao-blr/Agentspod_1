@@ -11,6 +11,8 @@ import {
 import type { InternalPageData } from "./internalPages";
 import { SiteHeader } from "./SiteHeader";
 
+const SITE_URL = (process.env.NEXT_PUBLIC_SITE_URL || "https://agentspod.ai").replace(/\/+$/, "");
+
 type InternalContentPageProps = {
   page: InternalPageData;
   /**
@@ -26,8 +28,10 @@ function isExternalHref(href: string) {
 
 export function InternalContentPage({ page, embedded = false }: InternalContentPageProps) {
   const isExternalCta = isExternalHref(page.primaryCtaHref);
+  const isExternalSecondaryCta = page.secondaryCtaHref ? isExternalHref(page.secondaryCtaHref) : false;
   const hideHeroSection = page.slug === "projects";
   const hideCapabilities = page.slug === "privacy" || page.slug === "terms";
+  const canonicalUrl = `${SITE_URL}/${page.slug}`;
   const allFilterLabel = "All";
   const groupedSections = page.capabilityGroups ?? [];
   const sectionHeading = groupedSections.length ? page.capabilitiesSectionTitle : page.capabilitiesSectionTitle ?? "Technical Capabilities";
@@ -43,7 +47,7 @@ export function InternalContentPage({ page, embedded = false }: InternalContentP
     <>
       {!hideHeroSection ? (
         <section className="pc-wrap pc-section pc-internal-hero">
-          <ComponentTextH2Section>{page.heroHeading}</ComponentTextH2Section>
+          <h1 className="pc-text-h2-section">{page.heroHeading}</h1>
           <ComponentTextBodyLarge className="pc-section-copy">{page.heroBody}</ComponentTextBodyLarge>
           <div className="pc-hero-ctas is-centered">
             {isExternalCta ? (
@@ -55,6 +59,17 @@ export function InternalContentPage({ page, embedded = false }: InternalContentP
                 {page.primaryCtaLabel}
               </Link>
             )}
+            {page.secondaryCtaLabel && page.secondaryCtaHref ? (
+              isExternalSecondaryCta ? (
+                <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={page.secondaryCtaHref} target="_blank" rel="noopener noreferrer">
+                  {page.secondaryCtaLabel}
+                </a>
+              ) : (
+                <Link className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={page.secondaryCtaHref}>
+                  {page.secondaryCtaLabel}
+                </Link>
+              )
+            ) : null}
           </div>
           {!groupedSections.length ? (
             <div className="pc-chip-row pc-internal-chip-row">
@@ -163,6 +178,19 @@ export function InternalContentPage({ page, embedded = false }: InternalContentP
         </section>
       ) : null}
 
+      {page.relatedLinks && page.relatedLinks.length > 0 ? (
+        <section className="pc-wrap pc-related-links" aria-label="Related services">
+          <p className="pc-eyebrow">Related</p>
+          <div className="pc-related-links-row">
+            {page.relatedLinks.map((link) => (
+              <Link key={link.href} className="pc-related-link" href={link.href}>
+                {link.label} →
+              </Link>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
       <section className="pc-wrap pc-section pc-cta">
         <ComponentTextH2Section>{page.closingHeading}</ComponentTextH2Section>
         <ComponentTextBodyLarge className="pc-section-copy">{page.closingBody}</ComponentTextBodyLarge>
@@ -176,6 +204,17 @@ export function InternalContentPage({ page, embedded = false }: InternalContentP
               {page.primaryCtaLabel}
             </Link>
           )}
+          {page.secondaryCtaLabel && page.secondaryCtaHref ? (
+            isExternalSecondaryCta ? (
+              <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={page.secondaryCtaHref} target="_blank" rel="noopener noreferrer">
+                {page.secondaryCtaLabel}
+              </a>
+            ) : (
+              <Link className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href={page.secondaryCtaHref}>
+                {page.secondaryCtaLabel}
+              </Link>
+            )
+          ) : null}
         </div>
       </section>
     </>
@@ -190,6 +229,7 @@ export function InternalContentPage({ page, embedded = false }: InternalContentP
       <Head>
         <title>{page.title}</title>
         <meta name="description" content={page.description} />
+        <link rel="canonical" href={canonicalUrl} />
       </Head>
       <main className="pc-page">
         <SiteHeader mobileNavAriaLabel="Primary mobile navigation" />

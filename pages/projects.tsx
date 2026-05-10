@@ -1,8 +1,8 @@
 import Head from "next/head";
-import { InternalContentPage } from "@/components/landing/InternalContentPage";
-import { internalPages } from "@/components/landing/internalPages";
-import { ProjectCard } from "@/components/landing/ProjectCard";
-import { SiteHeader } from "@/components/landing/SiteHeader";
+import { InternalContentPage } from "../components/landing/InternalContentPage";
+import { internalPages } from "../components/landing/internalPages";
+import { ProjectCard } from "../components/landing/ProjectCard";
+import { SiteHeader } from "../components/landing/SiteHeader";
 
 const deepCaseStudies = [
   {
@@ -55,6 +55,7 @@ export default function ProjectsPage() {
           name="description"
           content="Anonymized case studies from our delivery team across AI agents, voice AI, IoT, computer vision, and compliance automation."
         />
+        <link rel="canonical" href="https://agentspod.ai/projects" />
       </Head>
       <main className="pc-page">
         <SiteHeader mobileNavAriaLabel="Case studies mobile navigation" />

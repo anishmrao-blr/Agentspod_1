@@ -1,7 +1,7 @@
 import Head from "next/head";
-import { SiteHeader } from "@/components/landing/SiteHeader";
+import { SiteHeader } from "../components/landing/SiteHeader";
 
-const CALENDAR_LINK = "https://cal.com/swami-tpxjxh";
+const CALENDAR_LINK = "/qualify";
 
 export default function AboutPage() {
   return (
@@ -12,6 +12,7 @@ export default function AboutPage() {
           name="description"
           content="We partner with founders and enterprises to deliver outcome-driven AI systems, combining deep engineering intelligence with hands-on collaboration from strategy to scale."
         />
+        <link rel="canonical" href="https://agentspod.ai/about" />
       </Head>
 
       <main className="pc-page">
@@ -24,7 +25,7 @@ export default function AboutPage() {
               production rollout, we stay accountable for measurable impact.
             </p>
             <div className="pc-hero-ctas is-centered" style={{ marginTop: 28 }}>
-              <a className="pc-btn pc-btn-primary-hero pc-btn-anchor" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">
+              <a className="pc-btn pc-btn-primary-hero pc-btn-anchor" href={CALENDAR_LINK}>
                 Book a strategy call
               </a>
               <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href="/projects">
@@ -97,7 +98,7 @@ export default function AboutPage() {
               Bring your use case, product ambition, or enterprise challenge. We will help you move from strategy to production.
             </p>
             <div className="pc-hero-ctas is-centered" style={{ marginTop: 24 }}>
-              <a className="pc-btn pc-btn-primary-hero pc-btn-anchor" href={CALENDAR_LINK} target="_blank" rel="noopener noreferrer">
+              <a className="pc-btn pc-btn-primary-hero pc-btn-anchor" href={CALENDAR_LINK}>
                 Book a strategy call
               </a>
               <a className="pc-btn pc-btn-ghost-hero pc-btn-anchor" href="/contact">

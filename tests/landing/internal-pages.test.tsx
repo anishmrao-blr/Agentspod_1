@@ -38,7 +38,7 @@ describe("Internal content pages", () => {
   it("renders a route model with headings and CTA", () => {
     renderInternal(internalPages["ai-agents"]);
 
-    expect(screen.getByRole("heading", { name: "AI Agents" })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: "Agentic AI Platforms" })).toBeInTheDocument();
     expect(screen.getAllByRole("link", { name: "Deploy Agents" }).length).toBeGreaterThan(0);
     expect(screen.getByRole("heading", { name: "Technical Capabilities" })).toBeInTheDocument();
   });
@@ -51,10 +51,10 @@ describe("Internal content pages", () => {
     expect(screen.getByText("AI-Driven Sanctions Intelligence & Real-Time Compliance System")).toBeInTheDocument();
     expect(screen.getByText("SERYNA - Emotionally Intelligent Voice AI Companion")).toBeInTheDocument();
 
-    await user.click(screen.getByRole("tab", { name: "Voice AI & Conversational Systems" }));
+    await user.click(screen.getByRole("tab", { name: "Voice AI & Conversational Agents" }));
 
     expect(screen.queryByText("AI-Driven Sanctions Intelligence & Real-Time Compliance System")).not.toBeInTheDocument();
-    expect(screen.getByRole("tab", { name: "Voice AI & Conversational Systems" })).toHaveAttribute("aria-selected", "true");
+    expect(screen.getByRole("tab", { name: "Voice AI & Conversational Agents" })).toHaveAttribute("aria-selected", "true");
     expect(screen.getByText("SERYNA - Emotionally Intelligent Voice AI Companion")).toBeInTheDocument();
   });
 });

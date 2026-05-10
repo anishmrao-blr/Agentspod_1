@@ -3,7 +3,7 @@ import { LandingPage } from "../components/landing/LandingPage";
 export default function Landing() {
   const titlePrefix = "Agentspod.AI";
   const description =
-    "The technical partner for ambitious founders and forward-thinking enterprises. We build the AI systems that power the future.";
+    "Agentspod embeds engineers to ship AI in production—agent platforms, voice, document intelligence, DPDP compliance, supply-chain systems, and RAG—for founders and enterprises across India, Australia, and Singapore.";
 
   return (
     <>
@@ -15,7 +15,7 @@ export default function Landing() {
         />
         <meta
           name="keywords"
-          content="AI development, artificial intelligence, machine learning, AI agents, generative AI, data science, custom software development, AI consulting, voice AI, natural language processing, AI solutions"
+          content="agentic workflow automation, voice AI agent, invoice processing automation AI, DPDP compliance AI, AI supply chain optimization, RAG implementation, LangGraph development, AI agents India, enterprise AI Australia Singapore, document intelligence BFSI"
         />
         <meta property="og:title" content={`${titlePrefix} | Engineering Intelligence`} />
         <meta property="og:description" content={description} />

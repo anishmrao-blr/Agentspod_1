@@ -13,58 +13,58 @@ import {
   ComponentTextH2Section
 } from "./PencilComponentLibrary";
 import { FeaturedWork } from "./FeaturedWork";
-import { useTheme } from "@/components/theme/useTheme";
-import type { LandingContent } from "@/lib/directusLanding";
+import { useTheme } from "../theme/useTheme";
+import type { LandingContent, ToolkitCard } from "../../lib/directusLanding";
 import { useEffect, useMemo, useRef, useState } from "react";
 import { LazyMotion, domAnimation, m, useInView, useReducedMotion, useScroll, useTransform } from "framer-motion";
 
 const ORIGIN = "";
 
 const defaultServiceLinks = [
-  { label: "AI Agents", href: `${ORIGIN}/ai-agents` },
-  { label: "Generative AI", href: `${ORIGIN}/gen-ai` },
-  { label: "Data Science", href: `${ORIGIN}/data-science` },
+  { label: "Agentic AI", href: `${ORIGIN}/ai-agents` },
   { label: "Voice AI", href: `${ORIGIN}/voice-ai` },
-  { label: "Software Dev", href: `${ORIGIN}/software-development` }
+  { label: "Document Intelligence", href: `${ORIGIN}/document-intelligence` },
+  { label: "DPDP Compliance", href: `${ORIGIN}/dpdp-compliance` },
+  { label: "Supply Chain AI", href: `${ORIGIN}/supply-chain-ai` },
+  { label: "RAG & Knowledge", href: `${ORIGIN}/rag-knowledge` }
 ];
 
-const defaultToolkitCards = [
+const defaultToolkitCards: ToolkitCard[] = [
   {
-    title: "Stateful Agentic Workflows",
-    body: "Autonomous task execution using LangGraph and CrewAI for complex, non-linear business logic that requires memory and human-in-the-loop oversight.",
+    title: "Agentic AI Platforms",
+    body: "Multi-agent orchestration on LangGraph. Reasoning, routing, and embedding tiers coordinated across complex enterprise workflows — in-VPC on AWS Bedrock.",
     learnMoreHref: `${ORIGIN}/ai-agents`,
     media: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&q=80"
   },
   {
-    title: "Real-Time Voice Intelligence",
-    body: "Sub-300ms voice agents using ElevenLabs and custom STT/TTS pipelines, trained on domain-specific knowledge for healthcare, finance, and customer support.",
+    title: "Voice AI & Conversational Agents",
+    body: "Sub-300ms inbound voice agents with Hindi and eight regional languages in production. Built for dealer lines, support, and sales—where code-switching and noisy environments are normal.",
     learnMoreHref: `${ORIGIN}/voice-ai`,
     media: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&auto=format&q=80"
   },
   {
-    title: "Domain-Specific Intelligence",
-    body: "Custom model training and fine-tuning using high-fidelity synthetic datasets to ensure performance in data-scarce or privacy-sensitive sectors like insurance and mining.",
-    learnMoreHref: `${ORIGIN}/gen-ai`,
-    media: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&q=80"
-  },
-  {
-    title: "Enterprise-Grade Performance",
-    body: "Optimization across the Nvidia tool stack (NIMs) for ultra-low latency and hardware-accelerated agent performance in high-throughput environments.",
-    learnMoreHref: `${ORIGIN}/ai-agents`,
-    media: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&q=80"
-  },
-  {
-    title: "Knowledge Sovereignty",
-    body: "Secure, cited enterprise RAG utilizing LlamaIndex and pgvector, deployed with strict data residency on AWS Sydney or Azure Australia East.",
-    learnMoreHref: `${ORIGIN}/data-science`,
-    media: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&auto=format&q=80"
-  },
-  {
-    title: "Cognitive Data Triage",
-    body: "Autonomous extraction and processing of unstructured data (contracts, claims, manifests) using advanced agentic IDP patterns and multi-modal OCR.",
-    learnMoreHref: "#contact",
-    learnMoreLabel: "Discuss a use case",
+    title: "Document Intelligence & IDP",
+    body: "LLM-powered extraction from invoices, contracts, and KYC packs. Typical deployments cut review time materially—logged fields, reviewer UI, and export into your LOS or ERP.",
+    learnMoreHref: `${ORIGIN}/document-intelligence`,
     media: "https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=800&auto=format&q=80"
+  },
+  {
+    title: "DPDP & AI Compliance",
+    body: "India's DPDP Act — enforcement stepping up through 2026. PII detection, consent workflows, audit trails, and data residency—with evidence your legal and security teams can stand behind.",
+    learnMoreHref: `${ORIGIN}/dpdp-compliance`,
+    media: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&q=80"
+  },
+  {
+    title: "Supply Chain & Ops AI",
+    body: "Demand forecasting, dispatch optimisation, and computer vision QC at FMCG and logistics scale—models and dashboards your ops team actually uses.",
+    learnMoreHref: `${ORIGIN}/supply-chain-ai`,
+    media: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&q=80"
+  },
+  {
+    title: "RAG & Knowledge Systems",
+    body: "Private data, made searchable. Pinecone and Weaviate vector pipelines with hybrid search and cited answers. Start with the ₹5–8L, 4-week pilot.",
+    learnMoreHref: `${ORIGIN}/rag-knowledge`,
+    media: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&auto=format&q=80"
   }
 ];
 
@@ -73,14 +73,18 @@ const defaultImpactStats = [
   { value: "75+", label: "Successful Projects" }
 ];
 
-const defaultIntelligenceMetrics = ["+65% ROI INCREASE", "23% CAC REDUCTION", "5000+ HOURS SAVED"];
+const defaultIntelligenceMetrics = [
+  "VPC and tenant-boundary deployments",
+  "Reviewable logs—not black-box prompts",
+  "Fixed-scope pilots before platform bets"
+];
 const defaultAudienceCards = [
   {
     eyebrow: "FOR FOUNDERS",
     title: "Build a Product",
     description:
       "We act as your technical co-founder. From MVP to scale, we turn your ambitious vision into a market-ready reality.",
-    chips: ["CUSTOM_DEV", "MVP_TO_SCALE", "GEN_AI_APPS"],
+    chips: ["Product build", "MVP → scale", "Gen-AI apps"],
     ctaLabel: "Build a Product",
     ctaHref: `${ORIGIN}/contact?type=founder`
   },
@@ -88,19 +92,20 @@ const defaultAudienceCards = [
     eyebrow: "FOR ENTERPRISE",
     title: "Deploy a Solution",
     description:
-      "Automate operations and unlock new ROI. We integrate intelligent agents into your workflows and help you manage the intelligence layer for your business.",
-    chips: ["VOICE_AI", "PROCESS_AUTO", "AGENTS"],
+      "Automate high-friction workflows with agents you can observe and roll back. We integrate with your systems of record—not a sidebar chat that ignores approvals.",
+    chips: ["Voice AI", "Process automation", "Agents"],
     ctaLabel: "Deploy a Solution",
     ctaHref: `${ORIGIN}/contact?type=enterprise`
   }
 ];
 
 const defaultFooterLinks = [
-  { section: "solutions", label: "AI Agents", href: `${ORIGIN}/ai-agents` },
-  { section: "solutions", label: "Generative AI", href: `${ORIGIN}/gen-ai` },
-  { section: "solutions", label: "Data Science", href: `${ORIGIN}/data-science` },
+  { section: "solutions", label: "Agentic AI", href: `${ORIGIN}/ai-agents` },
   { section: "solutions", label: "Voice AI", href: `${ORIGIN}/voice-ai` },
-  { section: "solutions", label: "Software Dev", href: `${ORIGIN}/software-development` },
+  { section: "solutions", label: "Document Intelligence", href: `${ORIGIN}/document-intelligence` },
+  { section: "solutions", label: "DPDP Compliance", href: `${ORIGIN}/dpdp-compliance` },
+  { section: "solutions", label: "Supply Chain AI", href: `${ORIGIN}/supply-chain-ai` },
+  { section: "solutions", label: "RAG & Knowledge", href: `${ORIGIN}/rag-knowledge` },
   { section: "company", label: "About", href: `${ORIGIN}/about` },
   { section: "company", label: "Case Studies", href: `${ORIGIN}/projects` },
   { section: "company", label: "Careers", href: `${ORIGIN}/careers` },
@@ -195,11 +200,13 @@ export function LandingPage({ content }: { content?: LandingContent }) {
   const intelligenceMetrics = content?.intelligenceMetrics?.length ? content.intelligenceMetrics : defaultIntelligenceMetrics;
   const audienceCards = content?.audienceCards?.length ? content.audienceCards : defaultAudienceCards;
   const footerLinks = content?.footerLinks?.length ? content.footerLinks : defaultFooterLinks;
-  const heroTitle = content?.heroTitle ?? "Building Agentic\nAI Experiences";
+  const heroTitle = content?.heroTitle ?? "AI in production.\nEmbedded with your team.\nWeeks, not quarters.";
   const heroDescription =
     content?.heroDescription ??
-    "The technical partner for ambitious founders and forward-thinking enterprises. We build the AI systems that power the future.";
-  const aboutText = content?.aboutText ?? "Engineering Intelligence. We build the AI infrastructure for founders and enterprises.";
+    "We embed engineers alongside founders and enterprises in India, Australia, and Singapore. Agentic AI, voice, documents, compliance, supply chain, and knowledge systems—scoped, built, and shipped with clear milestones.";
+  const aboutText =
+    content?.aboutText ??
+    "Engineering intelligence for operations and product teams. Forward-deployed delivery. India · Australia · Singapore.";
   const toolkitHeading = content?.toolkitHeading ?? "THE TOOLKIT";
   const toolkitDescription = content?.toolkitDescription ?? "Our engineering core covers the entire spectrum of modern AI development.";
   const impactHeading = content?.impactHeading ?? "SYSTEMS THAT\nDELIVER IMPACT.";
@@ -212,11 +219,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
     "Whether you're a founder with a vision or an enterprise with a problem, we have the engineering team to solve it.";
   const contactHeading = content?.contactHeading ?? "Contact";
   const contactDescription = content?.contactDescription ?? "Get in touch with our engineering team to discuss your AI project.";
-  const defaultMeetingUrl = "https://cal.com/swami-tpxjxh";
-  const defaultAnishMeetingUrl = "https://cal.com/anish-rao-drqgh9";
-  const cmsMeetingUrl = content?.meetingUrl?.trim();
-  const meetingUrl = cmsMeetingUrl ?? defaultMeetingUrl;
-  const anishMeetingUrl = content?.anishMeetingUrl?.trim() ?? defaultAnishMeetingUrl;
+  const qualifyUrl = `${ORIGIN}/qualify`;
   const contactEmail = content?.contactEmail ?? "hello@agentspod.ai";
   const footerTagline = content?.footerTagline ?? "Engineering Intelligence.";
   const footerSubtitle = content?.footerSubtitle ?? "We build the AI infrastructure for founders and enterprises.";
@@ -283,7 +286,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
             </m.button>
             <m.a
               className="pc-btn pc-btn-primary-header pc-btn-anchor"
-              href={`${ORIGIN}/qualify`}
+              href={qualifyUrl}
               whileHover={reduceHeavyMotion ? undefined : { y: -2 }}
               whileTap={reduceHeavyMotion ? undefined : { scale: 0.98 }}
             >
@@ -342,7 +345,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
             </m.a>
             <m.a
               className="pc-btn pc-btn-ghost-hero pc-btn-anchor"
-              href={`${ORIGIN}/qualify`}
+              href={qualifyUrl}
               whileHover={reduceHeavyMotion ? undefined : { y: -2 }}
               whileTap={reduceHeavyMotion ? undefined : { scale: 0.98 }}
             >
@@ -376,6 +379,23 @@ export function LandingPage({ content }: { content?: LandingContent }) {
           </div>
         </m.div>
       </m.section>
+
+      <m.div
+        className="pc-dpdp-banner"
+        initial={reduceHeavyMotion ? undefined : { opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.5, delay: 0.3 }}
+      >
+        <div className="pc-wrap pc-dpdp-banner-inner">
+          <span className="pc-dpdp-badge">DEADLINE</span>
+          <span className="pc-dpdp-text">
+            DPDP enforcement — November 2026 · ₹250Cr per violation · Zero Indian AI firms own this category
+          </span>
+          <a className="pc-dpdp-link" href={`${ORIGIN}/dpdp-compliance`}>
+            See the sprint →
+          </a>
+        </div>
+      </m.div>
 
       <m.section
         className="pc-wrap pc-about-strip"
@@ -473,6 +493,52 @@ export function LandingPage({ content }: { content?: LandingContent }) {
         </m.div>
       </m.section>
 
+      <m.section
+        className="pc-wrap pc-section pc-rag-pilot"
+        id="rag-pilot"
+        aria-labelledby="rag-pilot-heading"
+        initial={reduceHeavyMotion ? undefined : "hidden"}
+        whileInView={reduceHeavyMotion ? undefined : "visible"}
+        viewport={reduceHeavyMotion ? undefined : { once: true, amount: 0.2 }}
+        variants={reduceHeavyMotion ? undefined : sectionVariants}
+      >
+        <p className="pc-eyebrow">ENTRY OFFER</p>
+        <ComponentTextH2Section id="rag-pilot-heading">START WITH A RAG PILOT</ComponentTextH2Section>
+        <ComponentTextBodyLarge className="pc-section-copy">
+          Your knowledge is already in your documents, SharePoint, and Notion. The RAG Pilot makes it searchable and properly cited. Four weeks. Fixed scope. Fixed price.
+        </ComponentTextBodyLarge>
+        <m.div
+          className="pc-rag-pilot-grid"
+          variants={reduceHeavyMotion ? undefined : staggerContainerVariants}
+          initial={reduceHeavyMotion ? undefined : "hidden"}
+          whileInView={reduceHeavyMotion ? undefined : "visible"}
+          viewport={reduceHeavyMotion ? undefined : { once: true, amount: 0.2 }}
+        >
+          <m.div className="pc-rag-pilot-stat" variants={reduceHeavyMotion ? undefined : staggerItemVariants}>
+            <p className="pc-stat-num">4</p>
+            <ComponentTextBodySmall>Weeks. Fixed timeline.</ComponentTextBodySmall>
+          </m.div>
+          <m.div className="pc-rag-pilot-stat" variants={reduceHeavyMotion ? undefined : staggerItemVariants}>
+            <p className="pc-stat-num">₹5–8L</p>
+            <ComponentTextBodySmall>Fixed price. No surprises.</ComponentTextBodySmall>
+          </m.div>
+          <m.div className="pc-rag-pilot-stat" variants={reduceHeavyMotion ? undefined : staggerItemVariants}>
+            <p className="pc-stat-num">1</p>
+            <ComponentTextBodySmall>Clear deliverable: your docs, made searchable.</ComponentTextBodySmall>
+          </m.div>
+        </m.div>
+        <div className="pc-hero-ctas is-centered">
+          <m.a
+            className="pc-btn pc-btn-primary-hero pc-btn-anchor"
+            href={`${ORIGIN}/rag-knowledge`}
+            whileHover={reduceHeavyMotion ? undefined : { y: -2 }}
+            whileTap={reduceHeavyMotion ? undefined : { scale: 0.98 }}
+          >
+            START WITH THE RAG PILOT →
+          </m.a>
+        </div>
+      </m.section>
+
       <FeaturedWork />
 
       <m.section
@@ -568,7 +634,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
         <div className="pc-contact-links">
           <m.a
             className="pc-btn pc-btn-primary-hero pc-btn-anchor"
-            href={`${ORIGIN}/qualify`}
+            href={qualifyUrl}
             whileHover={reduceHeavyMotion ? undefined : { y: -2 }}
             whileTap={reduceHeavyMotion ? undefined : { scale: 0.98 }}
           >
@@ -605,7 +671,7 @@ export function LandingPage({ content }: { content?: LandingContent }) {
                 LinkedIn
               </a>
               <a href={`mailto:${contactEmail}`}>Email</a>
-              <a href={`${ORIGIN}/qualify`}>
+              <a href={qualifyUrl}>
                 Book a Meeting
               </a>
             </div>

@@ -1,6 +1,6 @@
 import Head from "next/head";
-import { InternalContentPage } from "@/components/landing/InternalContentPage";
-import { internalPages } from "@/components/landing/internalPages";
+import { InternalContentPage } from "../components/landing/InternalContentPage";
+import { internalPages } from "../components/landing/internalPages";
 
 const page = internalPages["ai-agents"];
 

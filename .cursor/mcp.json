@@ -1,5 +1,12 @@
 {
   "mcpServers": {
+    "codegraphcontext": {
+      "command": "python",
+      "args": ["-m", "codegraphcontext", "mcp", "start"],
+      "env": {
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
     "vercel": {
       "url": "https://mcp.vercel.com"
     },
@@ -8,18 +15,6 @@
     },
     "webflow": {
       "url": "https://mcp.webflow.com/sse"
-    },
-    "framer": {
-      "command": "node",
-      "args": [
-        "/Users/swami/Documents/Pluging_test/tools/framer-mcp/packages/server/dist/index.js"
-      ]
-    },
-    "directus": {
-      "url": "http://127.0.0.1:8055/mcp",
-      "headers": {
-        "Authorization": "Bearer MHzTGgsDEbT35ZsgvJwNSFl4dmaAty9E"
-      }
     }
   }
 }

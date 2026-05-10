@@ -1,5 +1,5 @@
 import type { AppProps } from "next/app";
-import { ThemeProvider } from "@/components/theme/ThemeProvider";
+import { ThemeProvider } from "../components/theme/ThemeProvider";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 

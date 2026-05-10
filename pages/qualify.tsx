@@ -1,7 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import { AnimatePresence, LazyMotion, domAnimation, m, useReducedMotion } from "framer-motion";
-import { SiteHeader } from "@/components/landing/SiteHeader";
+import { SiteHeader } from "../components/landing/SiteHeader";
 
 const ANISH_CAL_URL = "https://cal.com/anish-rao-drqgh9";
 const TOTAL_STEPS = 4;
@@ -116,6 +116,7 @@ export default function QualifyPage() {
       <Head>
         <title>Let's Talk — AgentsPod.AI</title>
         <meta name="description" content="Takes about 2 minutes. A few questions so Anish knows how to help before your call." />
+        <link rel="canonical" href="https://agentspod.ai/qualify" />
       </Head>
       <LazyMotion features={domAnimation}>
         <main className="pc-page">
@@ -239,7 +240,6 @@ function Step1({
           value={form.email}
           onChange={(e) => setForm((f) => ({ ...f, email: e.target.value }))}
           autoComplete="email"
-          // eslint-disable-next-line jsx-a11y/no-autofocus
           autoFocus
         />
         {emailError && <p className="pc-qualify-hint is-error">Looks like a personal email. Try your work address.</p>}

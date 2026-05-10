@@ -2,18 +2,22 @@ import Head from "next/head";
 import { InternalContentPage } from "../components/landing/InternalContentPage";
 import { internalPages } from "../components/landing/internalPages";
 
-const page = internalPages["voice-ai"];
+const page = internalPages["dpdp-compliance"];
 
-export default function VoiceAIPage() {
+export default function DPDPCompliancePage() {
   return (
     <>
       <Head>
         <title>{page.title}</title>
         <meta name="description" content={page.description} />
+        <meta
+          name="keywords"
+          content="DPDP compliance AI, DPDP Act India, Digital Personal Data Protection, PII detection, consent management AI, data residency India, AI compliance India, DPDP enforcement 2026, data governance AI"
+        />
         <meta property="og:title" content={page.title} />
         <meta property="og:description" content={page.description} />
-        <meta property="og:url" content="https://agentspod.ai/voice-ai" />
-        <link rel="canonical" href="https://agentspod.ai/voice-ai" />
+        <meta property="og:url" content="https://agentspod.ai/dpdp-compliance" />
+        <link rel="canonical" href="https://agentspod.ai/dpdp-compliance" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -27,7 +31,7 @@ export default function VoiceAIPage() {
                 name: "Agentspod.AI",
                 url: "https://agentspod.ai",
               },
-              url: "https://agentspod.ai/voice-ai",
+              url: "https://agentspod.ai/dpdp-compliance",
             }),
           }}
         />

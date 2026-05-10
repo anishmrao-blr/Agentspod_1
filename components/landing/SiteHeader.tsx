@@ -1,4 +1,4 @@
-import { useTheme } from "@/components/theme/useTheme";
+import { useTheme } from "../theme/useTheme";
 import {
   ComponentLogoAIAgentsPodCubeMark,
   ComponentNavMenuItemLink
@@ -7,14 +7,15 @@ import {
 const ORIGIN = "";
 
 const serviceLinks = [
-  { label: "AI Agents", href: `${ORIGIN}/ai-agents` },
-  { label: "Generative AI", href: `${ORIGIN}/gen-ai` },
-  { label: "Data Science", href: `${ORIGIN}/data-science` },
+  { label: "Agentic AI Platforms", href: `${ORIGIN}/ai-agents` },
   { label: "Voice AI", href: `${ORIGIN}/voice-ai` },
-  { label: "Software Dev", href: `${ORIGIN}/software-development` }
+  { label: "Document Intelligence", href: `${ORIGIN}/document-intelligence` },
+  { label: "DPDP & AI Compliance", href: `${ORIGIN}/dpdp-compliance` },
+  { label: "Supply Chain AI", href: `${ORIGIN}/supply-chain-ai` },
+  { label: "RAG & Knowledge Systems", href: `${ORIGIN}/rag-knowledge` }
 ];
 
-const CALENDAR_HREF = "https://cal.com/swami-tpxjxh";
+const CALENDAR_HREF = `${ORIGIN}/qualify`;
 
 export type SiteHeaderProps = {
   /** Passed to the mobile nav landmark for screen readers (e.g. "Case studies mobile navigation"). */

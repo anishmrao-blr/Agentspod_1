@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import type { HeroAiBrand } from "@/lib/directusLanding";
+import type { HeroAiBrand } from "../../lib/directusLanding";
 import React from "react";
 
 type BaseProps = {

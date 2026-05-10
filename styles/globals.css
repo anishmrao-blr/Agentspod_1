@@ -1752,3 +1752,134 @@ a {
     padding: 24px 20px 28px;
   }
 }
+
+/* ── DPDP urgency banner ──────────────────────────────────────────── */
+.pc-dpdp-banner {
+  width: 100%;
+  background: rgba(220, 38, 38, 0.08);
+  border-top: 1px solid rgba(220, 38, 38, 0.2);
+  border-bottom: 1px solid rgba(220, 38, 38, 0.2);
+  padding: 10px 0;
+}
+
+.pc-dpdp-banner-inner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.pc-dpdp-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+  background: rgba(220, 38, 38, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(220, 38, 38, 0.3);
+  flex-shrink: 0;
+}
+
+.pc-dpdp-text {
+  font-size: 13px;
+  color: var(--foreground-muted);
+  flex: 1;
+}
+
+.pc-dpdp-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #f87171;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.pc-dpdp-link:hover {
+  text-decoration: underline;
+}
+
+/* ── RAG Pilot entry offer section ───────────────────────────────── */
+.pc-rag-pilot {
+  text-align: center;
+}
+
+.pc-rag-pilot-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-top: 32px;
+}
+
+.pc-rag-pilot-stat {
+  padding: 28px 20px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--pc-card-surface-background);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+/* ── Related links strip ──────────────────────────────────────────── */
+.pc-related-links {
+  margin-top: 60px;
+  padding-top: 28px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.pc-related-links-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.pc-related-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--foreground-muted);
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--border-subtle);
+  background: var(--pc-footer-block-bg);
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.pc-related-link:hover {
+  color: var(--foreground-default);
+  border-color: var(--border-strong);
+}
+
+/* ── 480px mobile refinements ─────────────────────────────────────── */
+@media (max-width: 480px) {
+  .pc-dpdp-banner-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+
+  .pc-rag-pilot-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pc-hero-ctas {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pc-hero-ctas .pc-btn {
+    text-align: center;
+    width: 100%;
+  }
+
+  .pc-related-links-row {
+    gap: 8px;
+  }
+
+  .pc-text-h1-hero {
+    font-size: 40px;
+  }
+}

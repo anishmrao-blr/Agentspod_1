@@ -10,6 +10,9 @@
 node_modules/
 .next/
 
+# Local Playwright preview captures (large PNGs)
+site-preview-screenshots/
+
 # Local temp artifacts
 .tmp_fix_chunks/
 .tmp_fix_ops.txt

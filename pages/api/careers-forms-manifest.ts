@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getCareersFormsManifest } from "@/lib/careers-forms-config";
+import { getCareersFormsManifest } from "../../lib/careers-forms-config";
 
 /**
  * JSON manifest of careers Google Form URLs (from NEXT_PUBLIC_* env).

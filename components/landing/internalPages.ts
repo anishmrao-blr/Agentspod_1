@@ -1,4 +1,4 @@
-﻿import { getCareersFormsManifest } from "@/lib/careers-forms-config";
+﻿import { getCareersFormsManifest } from "../../lib/careers-forms-config";
 
 export type InternalPageSection = {
   title: string;
@@ -22,6 +22,9 @@ export type InternalPageData = {
   heroBody: string;
   primaryCtaLabel: string;
   primaryCtaHref: string;
+  /** Optional secondary CTA shown alongside the primary. */
+  secondaryCtaLabel?: string;
+  secondaryCtaHref?: string;
   highlights: PageHighlight[];
   /** When set, replaces the default "Technical Capabilities" grid heading. */
   capabilitiesSectionTitle?: string;
@@ -33,6 +36,8 @@ export type InternalPageData = {
   capabilities: InternalPageSection[];
   closingHeading: string;
   closingBody: string;
+  /** Cross-pod related links rendered as inline anchor text before the closing CTA. */
+  relatedLinks?: Array<{ label: string; href: string }>;
 };
 
 function buildCareersPage(): InternalPageData {
@@ -89,27 +94,35 @@ function buildCareersPage(): InternalPageData {
 const internalPagesCore = {
   "ai-agents": {
     slug: "ai-agents",
-    title: "AI Agents | Agentspod.AI",
-    description: "Autonomous digital workers designed to execute complex tasks and integrate with existing workflows.",
-    heroHeading: "AI Agents",
+    title: "Agentic AI Platforms | Agentspod.AI",
+    description:
+      "Multi-agent orchestration for enterprise workflows. LangGraph-based systems coordinate specialised workers across complex, auditable steps—with clear handoffs, retries, and human review when confidence is low.",
+    heroHeading: "Agentic AI Platforms",
     heroBody:
-      "Autonomous digital workers designed to execute complex tasks, make decisions, and integrate seamlessly with existing workflows.",
+      "Multi-agent systems coordinating specialised workers across enterprise workflows—routing, retrieval, execution, and QA—with contracts between steps and full traceability. If you are outgrowing brittle RPA chains, this is the next layer.",
     primaryCtaLabel: "Deploy Agents",
     primaryCtaHref: "/contact",
     highlights: [
-      "Multi-Step Ticket Triage with LangGraph Agents",
-      "Autonomous SDR Agents with CRM Write-Back",
-      "Agentic IDP for Contracts, Claims & Manifests",
-      "Stateful Research Agents with Human-in-the-Loop"
+      "8-Agent Orchestration on AWS Bedrock (In-VPC, Seam Contracts Defined)",
+      "LangGraph Reasoning, Routing & Embedding Model Tiers",
+      "RPA Replacement for UiPath & Automation Anywhere Workflows",
+      "Stateful Human-in-the-Loop with Memory Across Sessions"
     ],
     capabilities: [
-      { title: "24/7 Operation", body: "Agents that never sleep, ensuring your business is always on.", image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=800&auto=format&q=80" },
-      { title: "Multi-Modal", body: "Process text, voice, and images seamlessly.", image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&auto=format&q=80" },
-      { title: "Self-Improving", body: "Systems that learn from interactions to get better over time.", image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&auto=format&q=80" },
-      { title: "Secure by Design", body: "Enterprise-grade security protocols built into every agent.", image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&auto=format&q=80" }
+      { title: "24/7 Operation", body: "Agents that run continuously — no handoffs, no gaps, no downtime.", image: "https://images.unsplash.com/photo-1580894732444-8ecded7900cd?w=800&auto=format&q=80" },
+      { title: "Multi-Agent Reasoning", body: "Specialised agents for routing, retrieval, execution, and review — each with a defined contract.", image: "https://images.unsplash.com/photo-1434494878577-86c23bcb06b9?w=800&auto=format&q=80" },
+      { title: "Full Auditability", body: "Every decision traced. Every step logged. Enterprise compliance built in from day one.", image: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&auto=format&q=80" },
+      { title: "In-VPC Deployment", body: "Runs inside your AWS or Azure environment. Your data never leaves your infrastructure.", image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&auto=format&q=80" }
     ],
-    closingHeading: "Ready to Automate?",
-    closingBody: "Let's build a custom agent workforce tailored to your specific business needs."
+    closingHeading: "Ready to Replace Your RPA Stack?",
+    closingBody:
+      "Bring a workflow that breaks every week under exceptions—we map the agent graph, the data contracts, and the human review gates, then ship to your VPC.",
+    secondaryCtaLabel: "Add a RAG knowledge layer",
+    secondaryCtaHref: "/rag-knowledge",
+    relatedLinks: [
+      { label: "RAG as the knowledge backend for your agents", href: "/rag-knowledge" },
+      { label: "Multi-step dispatch workflows for supply chain", href: "/supply-chain-ai" }
+    ]
   },
   "gen-ai": {
     slug: "gen-ai",
@@ -165,27 +178,37 @@ const internalPagesCore = {
   },
   "voice-ai": {
     slug: "voice-ai",
-    title: "Voice AI | Agentspod.AI",
-    description: "Human-like conversational voice systems for support, sales, and workflow automation.",
-    heroHeading: "Voice AI",
+    title: "Voice AI & Conversational Agents | Agentspod.AI",
+    description:
+      "Real-time spoken-language AI for support, sales, and ops. Sub-300ms response. Hindi and eight regional languages engineered for real field conditions—not English-only stacks retrofitted for India.",
+    heroHeading: "Voice AI & Conversational Agents",
     heroBody:
-      "Conversational AI that sounds human and handles real-world phone and voice workflows with low latency and high reliability.",
+      "Real-time spoken-language AI for support, sales, and operations. Sub-300ms response where the stack allows. Hindi and eight regional languages shipped in production—with code-switching and noisy environments in mind.",
     primaryCtaLabel: "Hear the Difference",
     primaryCtaHref: "/contact",
     highlights: [
-      "Sub-300ms Inbound Voice Agents (ElevenLabs + STT)",
-      "Outbound SDR Bots with CRM Sync",
-      "Natural Language Scheduling with Calendar Integration",
-      "Edge Voice Control for IoT & Smart Environments"
+      "Sub-300ms Inbound Voice Agents (Whisper ASR + ElevenLabs TTS)",
+      "Hindi + 8 Regional Languages — Production Deployed, Not a POC",
+      "WhatsApp chat to voice handoff—preserve context across channels",
+      "Outbound SDR Bots with Real-Time CRM Sync"
     ],
     capabilities: [
-      { title: "24/7 Live Support", body: "Scale support capacity instantly with always-on service quality.", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&q=80" },
-      { title: "Cost Efficiency", body: "Reduce operational overhead while maintaining quality interactions.", image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&q=80" },
-      { title: "Ultra-Low Latency", body: "Natural responses with sub-second response loops.", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&q=80" },
-      { title: "Emotion Analysis", body: "Detect tone and sentiment to adapt responses dynamically.", image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&auto=format&q=80" }
+      { title: "24/7 at Scale", body: "Replace IVR. Handle inbound volume without adding headcount.", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&auto=format&q=80" },
+      {
+        title: "Regional languages, built in",
+        body: "Hindi, Tamil, Telugu, Marathi, and more—with ASR/TTS tuned for how people actually speak on the phone.",
+        image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=800&auto=format&q=80"
+      },
+      { title: "Sub-300ms Response", body: "Real-time ASR pipeline to NLP and response generation. Conversations feel human.", image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&q=80" },
+      { title: "Sentiment Aware", body: "Tone and frustration detection — agents that adapt when the conversation shifts.", image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?w=800&auto=format&q=80" }
     ],
-    closingHeading: "Talk to the Future.",
-    closingBody: "Deploy voice agents that delight customers and reduce operational costs."
+    closingHeading: "Your Customers Speak Hindi. Your AI Should Too.",
+    closingBody: "If your customers call in Hindi or mix English mid-sentence, generic English voice stacks will fail. We ship the full voice + routing + CRM loop.",
+    secondaryCtaLabel: "See agentic orchestration",
+    secondaryCtaHref: "/ai-agents",
+    relatedLinks: [
+      { label: "Voice-triggered agentic flows", href: "/ai-agents" }
+    ]
   },
   "software-development": {
     slug: "software-development",
@@ -206,29 +229,167 @@ const internalPagesCore = {
     closingHeading: "Build to Last.",
     closingBody: "Partner with engineers who care about code quality as much as product outcomes."
   },
+  "document-intelligence": {
+    slug: "document-intelligence",
+    title: "Document Intelligence & IDP | Agentspod.AI",
+    description:
+      "LLM-powered extraction from invoices, contracts, KYC packs, and compliance documents—built for accuracy, traceability, and BFSI-grade review workflows.",
+    heroHeading: "Document Intelligence & IDP",
+    heroBody:
+      "Your BFSI workflows run on paper. Invoices, contracts, KYC packs, compliance filings. Each one manually read, checked, and processed. We automate that with LLM extraction.",
+    primaryCtaLabel: "Discuss a Document Workflow",
+    primaryCtaHref: "/contact",
+    highlights: [
+      "Invoice processing with extraction + human QA handoff for finance",
+      "KYC Pipeline for BFSI Onboarding (RBI + DPDP Aligned)",
+      "Contract Review via LangChain — 60–80% Review Time Cut",
+      "SOC 2, ISO 27001, and HIPAA Compliance Automation"
+    ],
+    capabilities: [
+      { title: "LLM Extraction", body: "GPT-4o and Mistral-7B extract structured data from any document format — PDF, scanned, handwritten.", image: "https://images.unsplash.com/photo-1568952433726-3896e3881c65?w=800&auto=format&q=80" },
+      { title: "OCR + Classification", body: "Multi-modal OCR with entity classification. No manual field mapping. No brittle templates.", image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&auto=format&q=80" },
+      { title: "LangChain Pipelines", body: "Automated review workflows that flag anomalies, mismatches, and compliance gaps before they become problems.", image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&auto=format&q=80" },
+      { title: "Audit-Ready Output", body: "Every extraction decision is logged, traceable, and ready for regulatory review.", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&q=80" }
+    ],
+    closingHeading: "Stop Reviewing Documents by Hand.",
+    closingBody:
+      "If your team still reads contracts and KYC packs by hand, you are paying for latency and error. We automate extraction and review with logged, auditable outputs.",
+    secondaryCtaLabel: "Make it DPDP-ready",
+    secondaryCtaHref: "/dpdp-compliance",
+    relatedLinks: [
+      { label: "DPDP-ready extraction pipelines", href: "/dpdp-compliance" },
+      { label: "RAG search on extracted documents", href: "/rag-knowledge" }
+    ]
+  },
+  "dpdp-compliance": {
+    slug: "dpdp-compliance",
+    title: "DPDP & AI Compliance | Agentspod.AI",
+    description:
+      "India's DPDP Act and supporting rules are setting a new bar for consent, data mapping, and audits. We help teams automate evidence, controls, and reviewer workflows—inside your cloud boundary.",
+    heroHeading: "DPDP & AI Compliance",
+    heroBody:
+      "DPDP rules are tightening through 2026. If you run AI or high-volume personal data in India, you need a defensible map of PII, consent, processing, and audits—not another slide deck. We implement the platform workflow in your tenancy.",
+    primaryCtaLabel: "Book a DPDP Compliance Sprint",
+    primaryCtaHref: "/qualify",
+    highlights: [
+      "DPDP Compliance Sprint — 6 Weeks, ₹15–25L, Fixed Scope",
+      "Automated PII Detection & Data Classification Across AI Systems",
+      "Consent Management, User Rights Automation & Audit Trail",
+      "Data Residency Controls — AWS, GCP, and SharePoint Supported"
+    ],
+    capabilities: [
+      { title: "PII Detection", body: "Automated scanning across your AI pipelines, databases, and document stores. Know exactly where personal data lives.", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&q=80" },
+      { title: "Consent Management", body: "Purpose-linked consent flows, user rights automation, and withdrawal handling — DPDP-compliant from day one.", image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&q=80" },
+      { title: "Audit Trail", body: "Every data access, processing event, and consent decision logged and exportable. Ready for the regulator before they ask.", image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&auto=format&q=80" },
+      { title: "Data Residency", body: "Your data stays in your cloud. BYOC architecture across AWS, GCP, and SharePoint — no sensitive files on our servers.", image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&auto=format&q=80" }
+    ],
+    closingHeading: "November 2026 Is Not Far Away.",
+    closingBody:
+      "A fixed six-week sprint establishes your control baseline; most teams continue with managed hardening. Bring legal and security—we will walk the technical evidence with them.",
+    secondaryCtaLabel: "Automate document review",
+    secondaryCtaHref: "/document-intelligence",
+    relatedLinks: [
+      { label: "PII detection in documents", href: "/document-intelligence" }
+    ]
+  },
+  "supply-chain-ai": {
+    slug: "supply-chain-ai",
+    title: "Supply Chain & Ops AI | Agentspod.AI",
+    description:
+      "Demand forecasting, dispatch optimisation, and computer vision QC—deployed alongside ERP and field data for FMCG, logistics, and manufacturing teams.",
+    heroHeading: "Supply Chain & Ops AI",
+    heroBody:
+      "Forecasting, routing, supplier risk, and quality control still live in spreadsheets at most mid-market ops teams. We tie models to ERP and IoT signals so planners get recommendations they can accept, override, and audit.",
+    primaryCtaLabel: "Discuss Your Ops Challenge",
+    primaryCtaHref: "/contact",
+    highlights: [
+      "FMCG Dispatch Optimisation at Scale — Production Delivered",
+      "Computer Vision QC — Defect Detection in Manufacturing Lines",
+      "AI Demand Forecasting with ERP & IoT Integration",
+      "Supplier Risk Scoring & Inventory Optimisation"
+    ],
+    capabilities: [
+      { title: "Demand Forecasting", body: "ML models trained on your historical data, seasonal patterns, and external signals. Stop carrying excess inventory.", image: "https://images.unsplash.com/photo-1543286386-713bdd548da4?w=800&auto=format&q=80" },
+      { title: "Computer Vision QC", body: "Real-time defect detection on manufacturing lines. Catches what human inspectors miss — at machine speed.", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&auto=format&q=80" },
+      { title: "Dispatch Optimisation", body: "AI-driven routing and scheduling that cuts delivery costs and reduces SLA breaches across distribution networks.", image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&auto=format&q=80" },
+      { title: "ERP + IoT Integration", body: "Connects directly into SAP, Oracle, and custom ERP stacks. IoT sensor data feeds real-time operational intelligence.", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&q=80" }
+    ],
+    closingHeading: "Better decisions at the hub and on the line.",
+    closingBody:
+      "We ship dispatch, forecasting, and QC loops with your data contracts—not model theatre. If you live in SAP, Oracle, or a mix of spreadsheets, we integrate there.",
+    secondaryCtaLabel: "Add multi-step dispatch agents",
+    secondaryCtaHref: "/ai-agents",
+    relatedLinks: [
+      { label: "Multi-step dispatch workflows with agentic AI", href: "/ai-agents" },
+      { label: "Document intelligence for supplier KYC", href: "/document-intelligence" }
+    ]
+  },
+  "rag-knowledge": {
+    slug: "rag-knowledge",
+    title: "RAG & Knowledge Systems | Agentspod.AI",
+    description:
+      "Enterprise search on your private documents—vector pipelines, hybrid retrieval, and citations your teams can trust. Start with a fixed-scope pilot (typically four weeks, ₹5–8L) on a bounded document set.",
+    heroHeading: "RAG & Knowledge Systems",
+    heroBody:
+      "Most enterprises have knowledge buried in documents, PDFs, SharePoint, and Notion. Your teams are already searching for this. We build the vector pipelines that make it findable and properly cited.",
+    primaryCtaLabel: "Start with the RAG Pilot",
+    primaryCtaHref: "/qualify",
+    highlights: [
+      "RAG pilot: ₹5–8L, 4 weeks, fixed document scope and success criteria",
+      "Pinecone + Weaviate Vector Stores with Hybrid Search",
+      "Embedding Optimisation & Reranking for Precision Recall",
+      "Eight-agent RAG + LangGraph control plane—EdTech B2B pattern"
+    ],
+    capabilities: [
+      { title: "Vector Pipelines", body: "Pinecone, Weaviate, and pgvector — configured for your document volume, query patterns, and latency requirements.", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&q=80" },
+      { title: "Hybrid Search", body: "Semantic + keyword search combined. Catches what pure vector search misses. Precision improves with every query.", image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&auto=format&q=80" },
+      { title: "Cited Answers", body: "Every response traces back to its source document. No hallucinations. No black boxes.", image: "https://images.unsplash.com/photo-1563986768494-4dee2763ff3f?w=800&auto=format&q=80" },
+      { title: "Data Sovereignty", body: "Deployed in-VPC on AWS Sydney or Azure Australia East. Your documents never leave your environment.", image: "https://images.unsplash.com/photo-1614064641938-3bbee52942c7?w=800&auto=format&q=80" }
+    ],
+    closingHeading: "Your Knowledge Base Is Already There. Make It Work.",
+    closingBody:
+      "Start with the RAG pilot: four weeks, fixed scope, ₹5–8L—you should see grounded answers on real documents before you fund a wider agent rollout.",
+    secondaryCtaLabel: "Pair with agent orchestration",
+    secondaryCtaHref: "/ai-agents",
+    relatedLinks: [
+      { label: "Agent orchestration layer on top of RAG", href: "/ai-agents" },
+      { label: "Document Intelligence for structured extraction first", href: "/document-intelligence" }
+    ]
+  },
   projects: {
     slug: "projects",
     title: "Case Studies | Agentspod.AI",
     description:
-      "Organized case studies from StellarMind delivery across AI, voice, IoT, computer vision, AR, enterprise analytics, and compliance automation.",
+      "21 real delivery engagements — anonymised. Agentic AI, Voice AI, Document Intelligence, DPDP Compliance, Supply Chain, and RAG. Every case includes architecture detail.",
     heroHeading: "Case Studies",
     heroBody:
-      "Real-world delivery across industries: explore every case study from the sitemap scrape, organized by domain so teams can quickly find relevant outcomes and architectures.",
+      "Twenty-one real engagements, anonymised—with enough technical depth to evaluate the build, not just the slide deck. Filter by practice area to find work closest to yours.",
     primaryCtaLabel: "Discuss a Similar Build",
     primaryCtaHref: "/contact",
+    secondaryCtaLabel: "Book a strategy call",
+    secondaryCtaHref: "/qualify",
     highlights: [
-      "AI Platforms & Automation",
-      "Voice AI & Conversational Systems",
-      "IoT & Edge Intelligence",
-      "Computer Vision & Inspection",
-      "AR/3D & Immersive Applications",
-      "Compliance, Analytics & Data Engineering"
+      "Agentic AI Platforms",
+      "Voice AI & Conversational Agents",
+      "Document Intelligence & IDP",
+      "DPDP & AI Compliance",
+      "Supply Chain & Ops AI",
+      "RAG & Knowledge Systems"
     ],
-    capabilitiesSectionTitle: "Projects Completed",
+    capabilitiesSectionTitle: "Delivery Portfolio",
     capabilityGroups: [
       {
-        title: "AI Platforms & Automation",
+        title: "Agentic AI Platforms",
         items: [
+          {
+            title: "EdTech B2B SaaS — Eight-Agent LangGraph Control Plane",
+            body:
+              "Production build for a Series B learning platform: eight specialised agents (content ingestion, curriculum alignment, live-session QA, proctoring risk, parent comms, billing anomaly, L2 support triage, analytics) orchestrated in LangGraph with explicit state, not a single chat wrapper.",
+            image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?w=800&auto=format&q=80",
+            details:
+              "Overview\n• A mid-market EdTech selling to schools and tuition chains in India needed production agentic workflows, not another pilot chatbot. Buyers compared them to UiPath-style automation: fixed SLAs, audit trails, and human handoff when confidence drops.\n\nArchitecture\n• LangGraph for durable agent graphs, checkpointing, and conditional edges (retry, escalate, skip).\n• Eight bounded agents with JSON schemas between steps; no unconstrained chain-of-thought across domains.\n• RAG over course PDFs and institution SOPs with pgvector; hybrid search for policy numbers and dates.\n• Model tiering: GPT-4 class for reasoning, smaller models for extraction; all calls logged with trace ids.\n• In-VPC deployment on the customer’s AWS account (Mumbai); PII never leaves their tenancy.\n\nWhat was at stake\n• RPA-heavy admins (timetables, fee notices) and LLM pilots that never cleared production. They needed working agent graphs under SLAs—not another demo.\n\nStack (representative)\n• Python, LangGraph, LangChain tooling, OpenAI / Bedrock APIs, PostgreSQL + pgvector, Redis queues, OpenTelemetry-style logs.\n\nOutcomes\n• Cut manual timetable and notice generation from days to under an hour per batch.\n• Escalation path to humans when proctoring or billing agents flag edge cases — auditable for trust and safety reviews.",
+            learnMoreHref: "/contact"
+          },
           {
             title: "AI-Driven Sanctions Intelligence & Real-Time Compliance System",
             body:
@@ -286,8 +447,17 @@ const internalPagesCore = {
         ]
       },
       {
-        title: "Voice AI & Conversational Systems",
+        title: "Voice AI & Conversational Agents",
         items: [
+          {
+            title: "B2B Voice Agent Platform — Regional Sales Lines & CRM Handoff",
+            body:
+              "For a voice-agent SaaS company selling to Indian mid-market retail and 3PL: inbound PSTN and WhatsApp voice with Hindi, English, Tamil, and Telugu; agent transfers structured outcomes to Salesforce; sub-300 ms typical turn for live sales.",
+            image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&auto=format&q=80",
+            details:
+              "Overview\n• Replace IVR and outsourced L1 for campaigns and dealer hotlines—without adding a multilingual call floor. Hindi–English code-switching and shop-floor noise demanded regional ASR with realistic per-minute economics.\n\nPipeline\n• Streaming ASR with Whisper-class models; VAD and turn-taking tuned for code-switching (Hindi–English).\n• TTS lane with SSML for number and SKU readbacks; fallback to canned audio for regulated phrases.\n• Orchestration service maps intents to CRM leads, tasks, and opportunity stages — not just transcript dumps.\n• Guardrails: block PCI-like numeric capture on shared lines; route to human for charge disputes.\n\nIntegration\n• REST hooks into Salesforce; optional webhook to internal ERP for order IDs.\n• Observability: per-call latency, word-error proxy dashboards, and replay for QA.\n\nStack (representative)\n• Python/FastAPI voice gateway, GPU ASR workers, Redis for session state, Postgres for CDR and model config.\n\nOutcomes\n• SDR-adjacent coverage on nights and weekends without proportional headcount; pilot to production in a four-week slice for one vertical.",
+            learnMoreHref: "/contact"
+          },
           {
             title: "SERYNA - Emotionally Intelligent Voice AI Companion",
             body:
@@ -300,8 +470,17 @@ const internalPagesCore = {
         ]
       },
       {
-        title: "IoT & Edge Intelligence",
+        title: "Supply Chain & Ops AI",
         items: [
+          {
+            title: "FMCG Dispatch & Cold Chain — Cooperative-Scale Rollout",
+            body:
+              "AI-assisted daily dispatch, route heatmaps, and spoilage-risk alerts for a major Indian FMCG cooperative: distributor POS signals, SAP order blocks, and field exceptions surfaced to ops managers before loads leave the hub.",
+            image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&q=80",
+            details:
+              "Overview\n• A large Indian FMCG distribution network needed fewer idle trucks, fewer temperature-related returns, and planner-friendly overrides whenever routing recommendations changed.\n\nProblem shape\n• Fragmented distributor sell-out data (spreadsheets + partial POS feeds); planners spent mornings rebalancing manually.\n• Cold-chain breaks traced late — finance saw spoilage as a line item, not a preventable routing event.\n\nWhat we shipped\n• Nightly + intraday feature store: SKU-level velocity, hub inventory, and weather overlays for perishable legs.\n• Optimiser suggests truck mixes and stop order; planners accept, edit with reason codes — audit trail for accountability.\n• Alerts when dwell time at a depot crosses SLA for chilled SKUs.\n• SAP-side read interfaces for firm orders; exports for 3PL TMS where the client does not self-dispatch.\n\nStack (representative)\n• Python services, Postgres + columnar rollups for time series, lightweight OR solver for first-pass routes, React dashboards for hub supervisors.\n\nOutcomes\n• Measurable spoilage reduction on pilot lanes and fewer emergency re-runs—with a path to extend across regions as ops signs off.",
+            learnMoreHref: "/contact"
+          },
           {
             title: "AI Medical Waste Monitoring System for Safe Disposal",
             body:
@@ -356,17 +535,8 @@ const internalPagesCore = {
         ]
       },
       {
-        title: "Computer Vision, Analytics & Compliance",
+        title: "DPDP & AI Compliance",
         items: [
-          {
-            title: "Secure CaseTracking & Client Management System",
-            body:
-              "Secure case management platform that enables clients and case managers to track case progress, manage documents, communicate, and schedule appointments.",
-            image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&q=80",
-            details:
-              "Overview\n• The client required a secure and scalable case management platform to streamline communication and collaboration between clients and case managers. The goal was to build a centralized system where users could track case progress, manage documents, schedule appointments, and communicate efficiently.\n\nTechnology Stack\n• React Native\n• Next JS\n• Node JS\n• FireBase\n• TypeScript\n• MondoDB\n• AWS\n\nKey Challenges\n• Fragmented communication across emails and manual updates\n• Lack of real-time case visibility\n• Document management issues\n• Complex workflow management\n\nSolutions\n• Centralized case management platform\n• Real-time case tracking\n• Secure document management\n• Integrated communication system\n• Task and workflow automation\n• Role-based access and security\n\nBenefits Delivered\n• Improved client transparency\n• Better communication\n• Efficient case management\n• Operational efficiency",
-            learnMoreHref: "/contact"
-          },
           {
             title: "AI Platform for DPDP Compliance & Data Governance",
             body:
@@ -374,6 +544,24 @@ const internalPagesCore = {
             image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&auto=format&q=80",
             details:
               "Overview\n• Indian fintech company required to comply with the Digital Personal Data Protection (DPDP) Act 2023. They needed a centralized compliance system that never stores sensitive data outside their own cloud.\n\nTechnology Stack\n• React JS\n• Node JS\n• TypeScript\n• PostgreSQL\n• Docker\n• SendGrid\n• OpenAI\n• AWS S3\n• Pinecone\n• AWS\n• GCP\n• SharePoint adapters\n\nKey Challenges\n• Manual tracking of 50+ DPDP controls was slow and error-prone.\n• Strict data sovereignty rules prohibited external file uploads.\n• Repetitive TPRM questionnaires wasted hours on manual research.\n• Inefficient auditor reviews due to full-access sharing.\n• No real-time compliance score or automated reports for audits.\n• Complex support for multiple storage providers.\n\nSolutions\n• Tenant isolation via PostgreSQL Row-Level Security and subdomain-based routing.\n• Storage abstraction layer using signed URLs and Microsoft Graph.\n• Pre-loaded DPDP framework for status tracking and compliance scoring.\n• Evidence & Policy modules with tagging and expiry alerts.\n• AI Questionnaire Assistant for auto-generated responses.\n• Task management with email reminders and secure Auditor Portal.\n\nBenefits Delivered\n• 70% reduction in manual compliance work.\n• 100% data sovereignty with zero sensitive files on servers.\n• AI reduces TPRM questionnaire time by ~75%.\n• Real-time compliance score and instant auditor-ready reports.\n• Secure auditor access without data risk.\n• Single platform works seamlessly across AWS, GCP, and SharePoint.",
+            learnMoreHref: "/contact"
+          },
+          {
+            title: "Automated SOC 2 Audit Review with Mistral AI",
+            body:
+              "AI-driven solution automated SOC 2 report evaluation for a cybersecurity firm, enhancing report accuracy, reducing manual efforts, and boosting compliance.",
+            image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&q=80",
+            details:
+              "Overview\n• The client is a USA-based cybersecurity firm offering end-to-end solutions in data protection, privacy, and regulatory compliance. Their services span penetration testing, vulnerability assessments, and comprehensive audits for frameworks like SOC 2, ISO 27001, HIPAA, and GDPR.\n\nTechnology Stack\n• Python\n• Hugging Face\n• Mistral-7B\n• AWS (EC2)\n• AWS (S3)\n• MongoDB\n\nKey Challenges\n• Inconsistent formats of reports with varying structures and language.\n• Lack of a uniform schema complicating content mapping to Trust Services Criteria (TSC).\n• Subjective evaluation of report quality based on nuanced factors like clarity and completeness.\n• Need for a robust multi-dimensional scoring framework for fair evaluations.\n• Requirement to chunk and embed SOC 2 documents without losing context.\n\nSolutions\n• Preprocessed SOC 2 reports by removing noise and normalizing structures.\n• Segmented data into categories corresponding to the Trust Services Criteria.\n• Model evaluated categories and returned quality scores with justifications.\n• Parsed tables from PDF reports for TSC mappings and audit procedures.\n• Designed token-efficient prompts for context-aware LLM use.\n• Converted document segments into embeddings for efficient retrieval.\n\nBenefits Delivered\n• Significantly reduced manual effort in SOC 2 report review.\n• Delivered structured evaluations that minimize human bias.\n• Enabled intelligent retrieval ensuring only relevant information is analyzed.\n• Provided detailed explanations for scores, enhancing transparency.\n• Improved compliance documentation by identifying gaps in reports.",
+            learnMoreHref: "/contact"
+          },
+          {
+            title: "Secure CaseTracking & Client Management System",
+            body:
+              "Secure case management platform that enables clients and case managers to track case progress, manage documents, communicate, and schedule appointments.",
+            image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&auto=format&q=80",
+            details:
+              "Overview\n• The client required a secure and scalable case management platform to streamline communication and collaboration between clients and case managers. The goal was to build a centralized system where users could track case progress, manage documents, schedule appointments, and communicate efficiently.\n\nTechnology Stack\n• React Native\n• Next JS\n• Node JS\n• FireBase\n• TypeScript\n• MondoDB\n• AWS\n\nKey Challenges\n• Fragmented communication across emails and manual updates\n• Lack of real-time case visibility\n• Document management issues\n• Complex workflow management\n\nSolutions\n• Centralized case management platform\n• Real-time case tracking\n• Secure document management\n• Integrated communication system\n• Task and workflow automation\n• Role-based access and security\n\nBenefits Delivered\n• Improved client transparency\n• Better communication\n• Efficient case management\n• Operational efficiency",
             learnMoreHref: "/contact"
           },
           {
@@ -391,16 +579,7 @@ const internalPagesCore = {
               "Improving player engagement through high-velocity data analytics and secure engineering. Ingesting and analyzing terabytes of player data to drive behavioral insights while ensuring the highest level of security and regulatory compliance.",
             image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&q=80",
             details:
-              "Overview\n• Explore Stellarmind.ai's AI, IoT, and AR solutions to boost efficiency and innovation. Discover custom software solutions tailored to meet your business needs.\n\nTechnology Stack\n• Python\n• Django\n• Airflow\n• Snowflake\n\nKey Challenges\n• Fragmented data sources\n• Massive volumes of data\n• Hindered real-time decision-making\n• Inadequate player profiling\n\nSolutions\n• Implemented Apache Airflow for data orchestration\n• Built ingestion engines using Snowpark and Python\n• Embedded rigorous data governance with dynamic masking and encryption\n\nBenefits Delivered\n• 30% improvement in player engagement\n• 500+ daily concurrent pipelines\n• 40% reduction in compute costs\n• GDPR & AML compliance with role-based access control",
-            learnMoreHref: "/contact"
-          },
-          {
-            title: "Automated SOC 2 Audit Review with Mistral AI",
-            body:
-              "AI-driven solution automated SOC 2 report evaluation for a cybersecurity firm, enhancing report accuracy, reducing manual efforts, and boosting compliance.",
-            image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&q=80",
-            details:
-              "Overview\n• The client is a USA-based cybersecurity firm offering end-to-end solutions in data protection, privacy, and regulatory compliance. Their services span penetration testing, vulnerability assessments, and comprehensive audits for frameworks like SOC 2, ISO 27001, HIPAA, and GDPR.\n\nTechnology Stack\n• Python\n• Hugging Face\n• Mistral-7B\n• AWS (EC2)\n• AWS (S3)\n• MongoDB\n\nKey Challenges\n• Inconsistent formats of reports with varying structures and language.\n• Lack of a uniform schema complicating content mapping to Trust Services Criteria (TSC).\n• Subjective evaluation of report quality based on nuanced factors like clarity and completeness.\n• Need for a robust multi-dimensional scoring framework for fair evaluations.\n• Requirement to chunk and embed SOC 2 documents without losing context.\n\nSolutions\n• Preprocessed SOC 2 reports by removing noise and normalizing structures.\n• Segmented data into categories corresponding to the Trust Services Criteria.\n• Model evaluated categories and returned quality scores with justifications.\n• Parsed tables from PDF reports for TSC mappings and audit procedures.\n• Designed token-efficient prompts for context-aware LLM use.\n• Converted document segments into embeddings for efficient retrieval.\n\nBenefits Delivered\n• Significantly reduced manual effort in SOC 2 report review.\n• Delivered structured evaluations that minimize human bias.\n• Enabled intelligent retrieval ensuring only relevant information is analyzed.\n• Provided detailed explanations for scores, enhancing transparency.\n• Improved compliance documentation by identifying gaps in reports.",
+              "Overview\n• High-volume iGaming operator requiring streaming pipelines from game servers, CRM, and payments into a governed warehouse. Scope emphasised player engagement analytics without moving regulated data outside approved regions.\n\nTechnology Stack\n• Python\n• Django\n• Airflow\n• Snowflake\n\nKey Challenges\n• Fragmented data sources\n• Massive volumes of data\n• Hindered real-time decision-making\n• Inadequate player profiling\n\nSolutions\n• Implemented Apache Airflow for data orchestration\n• Built ingestion engines using Snowpark and Python\n• Embedded rigorous data governance with dynamic masking and encryption\n\nBenefits Delivered\n• 30% improvement in player engagement\n• 500+ daily concurrent pipelines\n• 40% reduction in compute costs\n• GDPR & AML compliance with role-based access control",
             learnMoreHref: "/contact"
           },
           {
@@ -432,7 +611,7 @@ const internalPagesCore = {
         ]
       },
       {
-        title: "AR/3D, Creative & Mobile Apps",
+        title: "RAG & Knowledge Systems",
         items: [
           {
             title: "Krushiratn: Digital Agriculture Marketplace Platform",
@@ -484,6 +663,30 @@ const internalPagesCore = {
     capabilities: [
       // Fallback flat list retained for existing tests and consumers.
       // Grouped rendering uses `capabilityGroups` above.
+      {
+        title: "EdTech B2B SaaS — Eight-Agent LangGraph Control Plane",
+        body:
+          "Production build for a Series B learning platform: eight specialised agents (content ingestion, curriculum alignment, live-session QA, proctoring risk, parent comms, billing anomaly, L2 support triage, analytics) orchestrated in LangGraph with explicit state, not a single chat wrapper.",
+        details:
+          "Overview\n• A mid-market EdTech selling to schools and tuition chains in India needed production agentic workflows, not another pilot chatbot. Buyers compared them to UiPath-style automation: fixed SLAs, audit trails, and human handoff when confidence drops.\n\nArchitecture\n• LangGraph for durable agent graphs, checkpointing, and conditional edges (retry, escalate, skip).\n• Eight bounded agents with JSON schemas between steps; no unconstrained chain-of-thought across domains.\n• RAG over course PDFs and institution SOPs with pgvector; hybrid search for policy numbers and dates.\n• Model tiering: GPT-4 class for reasoning, smaller models for extraction; all calls logged with trace ids.\n• In-VPC deployment on the customer’s AWS account (Mumbai); PII never leaves their tenancy.\n\nWhat was at stake\n• RPA-heavy admins (timetables, fee notices) and LLM pilots that never cleared production. They needed working agent graphs under SLAs—not another demo.\n\nStack (representative)\n• Python, LangGraph, LangChain tooling, OpenAI / Bedrock APIs, PostgreSQL + pgvector, Redis queues, OpenTelemetry-style logs.\n\nOutcomes\n• Cut manual timetable and notice generation from days to under an hour per batch.\n• Escalation path to humans when proctoring or billing agents flag edge cases — auditable for trust and safety reviews.",
+        learnMoreHref: "/contact"
+      },
+      {
+        title: "B2B Voice Agent Platform — Regional Sales Lines & CRM Handoff",
+        body:
+          "For a voice-agent SaaS company selling to Indian mid-market retail and 3PL: inbound PSTN and WhatsApp voice with Hindi, English, Tamil, and Telugu; agent transfers structured outcomes to Salesforce; sub-300 ms typical turn for live sales.",
+        details:
+          "Overview\n• Replace IVR and outsourced L1 for campaigns and dealer hotlines—without adding a multilingual call floor. Hindi–English code-switching and shop-floor noise demanded regional ASR with realistic per-minute economics.\n\nPipeline\n• Streaming ASR with Whisper-class models; VAD and turn-taking tuned for code-switching (Hindi–English).\n• TTS lane with SSML for number and SKU readbacks; fallback to canned audio for regulated phrases.\n• Orchestration service maps intents to CRM leads, tasks, and opportunity stages — not just transcript dumps.\n• Guardrails: block PCI-like numeric capture on shared lines; route to human for charge disputes.\n\nIntegration\n• REST hooks into Salesforce; optional webhook to internal ERP for order IDs.\n• Observability: per-call latency, word-error proxy dashboards, and replay for QA.\n\nStack (representative)\n• Python/FastAPI voice gateway, GPU ASR workers, Redis for session state, Postgres for CDR and model config.\n\nOutcomes\n• SDR-adjacent coverage on nights and weekends without proportional headcount; pilot to production in a four-week slice for one vertical.",
+        learnMoreHref: "/contact"
+      },
+      {
+        title: "FMCG Dispatch & Cold Chain — Cooperative-Scale Rollout",
+        body:
+          "AI-assisted daily dispatch, route heatmaps, and spoilage-risk alerts for a major Indian FMCG cooperative: distributor POS signals, SAP order blocks, and field exceptions surfaced to ops managers before loads leave the hub.",
+        details:
+          "Overview\n• A large Indian FMCG distribution network needed fewer idle trucks, fewer temperature-related returns, and planner-friendly overrides whenever routing recommendations changed.\n\nProblem shape\n• Fragmented distributor sell-out data (spreadsheets + partial POS feeds); planners spent mornings rebalancing manually.\n• Cold-chain breaks traced late — finance saw spoilage as a line item, not a preventable routing event.\n\nWhat we shipped\n• Nightly + intraday feature store: SKU-level velocity, hub inventory, and weather overlays for perishable legs.\n• Optimiser suggests truck mixes and stop order; planners accept, edit with reason codes — audit trail for accountability.\n• Alerts when dwell time at a depot crosses SLA for chilled SKUs.\n• SAP-side read interfaces for firm orders; exports for 3PL TMS where the client does not self-dispatch.\n\nStack (representative)\n• Python services, Postgres + columnar rollups for time series, lightweight OR solver for first-pass routes, React dashboards for hub supervisors.\n\nOutcomes\n• Measurable spoilage reduction on pilot lanes and fewer emergency re-runs—with a path to extend across regions as ops signs off.",
+        learnMoreHref: "/contact"
+      },
       {
         title: "AI-Driven Sanctions Intelligence & Real-Time Compliance System",
         body:
@@ -577,7 +780,7 @@ const internalPagesCore = {
         body:
           "Improving player engagement through high-velocity data analytics and secure engineering. Ingesting and analyzing terabytes of player data to drive behavioral insights while ensuring the highest level of security and regulatory compliance.",
         details:
-          "Overview\n• Explore Stellarmind.ai's AI, IoT, and AR solutions to boost efficiency and innovation. Discover custom software solutions tailored to meet your business needs.\n\nTechnology Stack\n• Python\n• Django\n• Airflow\n• Snowflake\n\nKey Challenges\n• Fragmented data sources\n• Massive volumes of data\n• Hindered real-time decision-making\n• Inadequate player profiling\n\nSolutions\n• Implemented Apache Airflow for data orchestration\n• Built ingestion engines using Snowpark and Python\n• Embedded rigorous data governance with dynamic masking and encryption\n\nBenefits Delivered\n• 30% improvement in player engagement\n• 500+ daily concurrent pipelines\n• 40% reduction in compute costs\n• GDPR & AML compliance with role-based access control",
+          "Overview\n• High-volume iGaming operator requiring streaming pipelines from game servers, CRM, and payments into a governed warehouse. Scope emphasised player engagement analytics without moving regulated data outside approved regions.\n\nTechnology Stack\n• Python\n• Django\n• Airflow\n• Snowflake\n\nKey Challenges\n• Fragmented data sources\n• Massive volumes of data\n• Hindered real-time decision-making\n• Inadequate player profiling\n\nSolutions\n• Implemented Apache Airflow for data orchestration\n• Built ingestion engines using Snowpark and Python\n• Embedded rigorous data governance with dynamic masking and encryption\n\nBenefits Delivered\n• 30% improvement in player engagement\n• 500+ daily concurrent pipelines\n• 40% reduction in compute costs\n• GDPR & AML compliance with role-based access control",
         learnMoreHref: "/contact"
       },
       {
@@ -705,7 +908,7 @@ const internalPagesCore = {
     heroHeading: "Contact Us",
     heroBody: "Ready to build? Tell us about your project and we will map how to engineer it with you.",
     primaryCtaLabel: "Book a Strategy Call",
-    primaryCtaHref: "https://cal.com/swami-tpxjxh",
+    primaryCtaHref: "/qualify",
     highlights: [
       "hello@agentspod.ai",
       "Global Presence: India, USA, Europe, Canada, Australia",
